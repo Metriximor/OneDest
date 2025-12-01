@@ -1,0 +1,71 @@
+{
+    "version": 4,
+    "name": "OneDest Switches",
+    "source": "local:C75jC5ElD3ER/OneDest Switches",
+    "presentations": [
+        {}
+    ],
+    "features": [
+        {
+            "id": "iP39IM1YasOL",
+            "data": {
+                "x": 7770,
+                "z": 3950,
+                "radius": 10,
+                "name": "Cascais Junction",
+                "line": "L Line",
+                "default": "west: lambat, east: lusitania",
+                "dests": "Cascais"
+            },
+            "creator_id": "(local)",
+            "created_ts": 1763158068208,
+            "last_editor_id": "(local)",
+            "last_edited_ts": 1763158693932
+        },
+        {
+            "id": "Dz423Trs4p2F",
+            "data": {
+                "x": 6453,
+                "z": 3950,
+                "line": "L Line",
+                "dests": {
+                    "lLineFromLus": {
+                        "default": "lambat",
+                        "dests": [
+                            "-,+",
+                            "arctic",
+                            "ap",
+                            "danzilona",
+                            "transylvania",
+                            "truidencia"
+                        ]
+                    },
+                    "lLineFromLam": {
+                        "default": "lusitania",
+                        "dests": [
+                            "-,+",
+                            "arctic",
+                            "ap",
+                            "danzilona",
+                            "transylvania",
+                            "truidencia"
+                        ]
+                    },
+                    "southCopperLineConnectionFromWest": {
+                        "default": "lusitania",
+                        "dests": [
+                            "-,+",
+                            "lambat",
+                            "mta"
+                        ]
+                    }
+                },
+                "name": "L Line South Copper Line Junction"
+            },
+            "creator_id": "(local)",
+            "created_ts": 1763158401403,
+            "last_editor_id": "(local)",
+            "last_edited_ts": 1763160373701
+        }
+    ]
+}

@@ -561,28 +561,28 @@
             "image": "https://raw.githubusercontent.com/OneDest/data/master/images/transylvania.png"
         },
         {
-            "name": "Kallos",
-            "x": 8318,
-            "z": 4580,
-            "dest": "/dest ! +,+ medi kallos",
-            "level": 3,
-            "zoom": 2,
-            "id": "civmap:onedest/station/kallos",
-            "color": "#e83b3b",
-            "y": 10,
-            "image": "https://raw.githubusercontent.com/OneDest/data/master/images/kallos.png"
-        },
-        {
             "name": "Lusitania",
             "x": 7964,
             "z": 3960,
             "dest": "/dest ! +,+ medi lusitania portucale",
-            "level": 4,
+            "level": 3,
             "zoom": 4,
             "id": "civmap:onedest/station/lusitania",
             "color": "#e83b3b",
             "y": -49,
             "image": "https://raw.githubusercontent.com/OneDest/data/master/images/lusitania.png"
+        },
+        {
+            "name": "Cascais",
+            "x": 8318,
+            "z": 4580,
+            "dest": "/dest ! +,+ medi lusitania cascais",
+            "level": 4,
+            "zoom": 2,
+            "id": "civmap:onedest/station/cascais",
+            "color": "#e83b3b",
+            "y": 10,
+            "image": "https://raw.githubusercontent.com/OneDest/data/master/images/kallos.png"
         },
         {
             "name": "Truidencia",
