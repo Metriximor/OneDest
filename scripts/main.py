@@ -161,7 +161,7 @@ def main():
     l3_stations = grouped_stations[0]
     stationA, stationACoords = l3_stations[0]
     stationB, stationBCoords = next(
-        filter(lambda x: x[0].name == "Pavia", l3_stations)
+        filter(lambda x: x[0].name == "Lusitania", l3_stations)
     )
     print(
         f"To go from {stationA.name} to {stationB.name} you must go through: {pathfind(stationACoords, stationBCoords, nodes, graph)}"
