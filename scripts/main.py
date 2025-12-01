@@ -2,11 +2,11 @@ import ijson
 import math
 import numpy as np
 import logging
-from typing import Optional, OrderedDict, TypeVar
+from typing import Optional, TypeVar
 from pydantic import ValidationError
 from treelib import Tree
 from models import JsonStation, JsonLine
-from rustworkx import PyGraph, astar_shortest_path
+from rustworkx import PyGraph, astar_shortest_path, spring_layout, NoPathFound
 from rustworkx.visualization import mpl_draw
 from scipy.spatial import KDTree
 
@@ -129,21 +129,22 @@ def pathfind(
         x, z = node_data
         return euclidean_distance((x, z), (tx, tz))
 
-    path_indices = astar_shortest_path(
-        graph,
-        source_idx,
-        goal_fn,
-        edge_cost_fn,
-        estimate_cost_fn,
-    )
+    try:
+        path_indices = astar_shortest_path(
+            graph,
+            source_idx,
+            goal_fn,
+            edge_cost_fn,
+            estimate_cost_fn,
+        )
+    except NoPathFound:
+        return None
 
     junctions = []
     for i in path_indices:
         if graph.degree(i) <= 2:
             continue
         junctions.append(graph[i])
-    if len(junctions) == 0:
-        return None
     return junctions
 
 
@@ -160,20 +161,30 @@ def main():
     l3_stations = grouped_stations[0]
     stationA, stationACoords = l3_stations[0]
     stationB, stationBCoords = next(
-        filter(lambda x: x[0].name == "Khalkedonia", l3_stations)
+        filter(lambda x: x[0].name == "Pavia", l3_stations)
     )
     print(
         f"To go from {stationA.name} to {stationB.name} you must go through: {pathfind(stationACoords, stationBCoords, nodes, graph)}"
     )
 
-    positions = {i: graph[i] for i in range(graph.num_nodes())}
+    # positions = circular_layout(graph, center=(0,0))
+    pos = {i: [float(graph[i][0]), float(graph[i][1])] for i in range(graph.num_nodes())}
+    positions = spring_layout(
+        graph,
+        pos=pos,
+        k=1000.0,
+        repulsive_exponent=4,
+        num_iter=1000,
+        seed=1,
+        center=[0.0,0.0],
+    )
     fig = mpl_draw(
-        graph, node_size=5, with_labels=True, labels=str, font_size=2, pos=positions
+        graph, node_size=5, with_labels=True, labels=str, font_size=2, pos=positions, font_color="red"
     )
     ax = fig.gca()
     ax.invert_yaxis()
 
-    fig.savefig("graph.png", dpi=300)
+    fig.savefig(f"graph.png", dpi=300)
     print("Drawn")
 
 
