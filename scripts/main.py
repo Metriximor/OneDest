@@ -177,11 +177,7 @@ def main():
     junctions: dict[tuple[int, int], set[str]] = {}
     i = 0
     for station, coords in grouped_stations:
-        if station.level != 3:
-            continue
         for dest_station, dest_coords in grouped_stations:
-            if dest_station.level != 3:
-                continue
             if i % 100 == 0:
                 logging.info(f"Calculated {i} paths")
             i += 1
