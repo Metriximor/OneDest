@@ -215,7 +215,7 @@ def main():
                     junctions[coords].add(region)
                     continue
                 junctions[coords].add(nation)
-    with open("../TestJunctions.ndjson", "w+") as junction_test:
+    with open("../TestJunctions.json", "w+") as junction_test:
         junction_test.write(json.dumps({
             "version": 4,
             "name": "Automated OneDest Switches",
