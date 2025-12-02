@@ -159,7 +159,9 @@ def main():
         matchup_stations_to_nodes(unmatched_stations, list(nodes.keys()))
     )
     l3_stations = grouped_stations[0]
-    stationA, stationACoords = l3_stations[0]
+    stationA, stationACoords = next(
+        filter(lambda x: x[0].name == "Qbarra", l3_stations)
+    )
     stationB, stationBCoords = next(
         filter(lambda x: x[0].name == "Lusitania", l3_stations)
     )

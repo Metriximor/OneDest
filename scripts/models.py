@@ -24,7 +24,7 @@ class JsonStation(BaseModel):
     id: str
     color: str
     y: int
-    image: Optional[str]
+    image: Optional[str] = None
 
     def get_dests(self) -> list[str]:
         return self.dest.strip().lower().removeprefix("/dest ! ").split(" ")

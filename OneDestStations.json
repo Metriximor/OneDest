@@ -452,6 +452,17 @@
             "image": "https://raw.githubusercontent.com/OneDest/data/master/images/punkportal.png"
         },
         {
+            "name": "Selene",
+            "x": 4587,
+            "z": -58,
+            "dest": "/dest ! +,- lyrean selene",
+            "level": 3,
+            "zoom": 2,
+            "id": "civmap:onedest/station/selene",
+            "color": "#0eaf9b",
+            "y": -49
+        },
+        {
             "name": "Qbarra",
             "x": 7050,
             "z": 715,
