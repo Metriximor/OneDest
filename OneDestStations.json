@@ -435,7 +435,7 @@
             "level": 3,
             "zoom": 2,
             "id": "civmap:onedest/station/khalkedonia",
-            "color": "#d9b5ff",
+            "color": "#fcff94",
             "y": 70,
             "image": "https://raw.githubusercontent.com/OneDest/data/master/images/khalkedonia.png"
         },

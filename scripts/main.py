@@ -2,10 +2,12 @@ import ijson
 import math
 import numpy as np
 import logging
-from typing import Optional, TypeVar
+import json
+from uuid import uuid4
+from typing import Iterator, Optional, TypeVar
 from pydantic import ValidationError
 from treelib import Tree
-from models import JsonStation, JsonLine
+from models import JsonStation, JsonLine, JsonJunctions, JsonJunctionsData
 from rustworkx import PyGraph, astar_shortest_path, spring_layout, NoPathFound
 from rustworkx.visualization import mpl_draw
 from scipy.spatial import KDTree
@@ -13,6 +15,32 @@ from scipy.spatial import KDTree
 STATIONS_FILE = "../OneDestStations.json"
 LINES_FILE = "../OneDestLines.json"
 JUNCTIONS_FILE = "../OneDestJunctions.json"
+COLOR_TO_REGION = {
+    "#0eaf9b": "lyrean",
+    "#d9b5ff": "impendia",
+    "#fcff94": "aegis",
+    "#8B0000": "northlandia",
+    "#534582": "moloka",
+    "#024F30": "occident",
+    "#fcd20e": "karydia",
+    "#ffa500": "founders",
+    "#b02e26": "deluvia",
+    "#8fd3ff": "arctic",
+    "#e83b3b": "medi",
+    "#32CD32": "ap",
+}
+
+
+class StreamArray(list):
+    ### Class is used to stream a generator object in json.dumps method. Otherwise I get a TypeError: Object of type generator is not JSON serializable
+    def __init__(self, iterator: Iterator):
+        self.iterator = iterator
+
+    def __iter__(self):
+        return self.iterator
+
+    def __len__(self):
+        return 1
 
 
 def euclidean_distance(p1: tuple[int, int], p2: tuple[int, int]) -> float:
@@ -100,7 +128,7 @@ def matchup_stations_to_nodes(
 
 def group_by_level(
     stations_with_coords: list[tuple[JsonStation, tuple[int, int]]],
-) -> list[list[int, tuple[JsonStation, tuple[int, int]]]]:
+) -> list[list[tuple[JsonStation, tuple[int, int]]]]:
     temp: dict[int, list[tuple[JsonStation, tuple[int, int]]]] = {}
     for station, coords in stations_with_coords:
         if station.level not in temp:
@@ -158,19 +186,49 @@ def main():
     grouped_stations = group_by_level(
         matchup_stations_to_nodes(unmatched_stations, list(nodes.keys()))
     )
-    l3_stations = grouped_stations[0]
-    stationA, stationACoords = next(
-        filter(lambda x: x[0].name == "Qbarra", l3_stations)
-    )
-    stationB, stationBCoords = next(
-        filter(lambda x: x[0].name == "Lusitania", l3_stations)
-    )
-    print(
-        f"To go from {stationA.name} to {stationB.name} you must go through: {pathfind(stationACoords, stationBCoords, nodes, graph)}"
-    )
+    level_3_stations = grouped_stations[0]
+    junctions: dict[tuple[int, int], set[str]] = {}
+    i = 0
+    for station, coords in level_3_stations:
+        for dest_station, dest_coords in level_3_stations:
+            if i % 100 == 0:
+                logging.info(f"Calculated {i} paths")
+            i += 1
+            if station == dest_station:
+                continue
+            path = pathfind(coords, dest_coords, nodes, graph)
+            if path is None:
+                continue
+            for coords in path:
+                if coords not in junctions:
+                    junctions[coords] = set()
+                x, z = coords
+                node_quadrant = f"{'+' if x >= 0 else '-'},{'+' if z >= 0 else '-'}"
+                dests = dest_station.get_dests()
+                quadrant = dests[0]
+                region = dests[1]
+                nation = dests[2]
+                if node_quadrant != quadrant:
+                    junctions[coords].add(quadrant)
+                    continue
+                if COLOR_TO_REGION[station.color] != region:
+                    junctions[coords].add(region)
+                    continue
+                junctions[coords].add(nation)
+    with open("../TestJunctions.ndjson", "w+") as junction_test:
+        junction_test.write(json.dumps({
+            "version": 4,
+            "name": "Automated OneDest Switches",
+            "source": "local:C75jC5ElD3ER/OneDest Switches",
+            "presentations": [{}],
+            "features": StreamArray((JsonJunctions(id=str(uuid4()), data=JsonJunctionsData(x=coords[0],z=coords[1],dests=list(junction))).model_dump() for coords, junction in junctions.items())),
+        }))
 
     # positions = circular_layout(graph, center=(0,0))
-    pos = {i: [float(graph[i][0]), float(graph[i][1])] for i in range(graph.num_nodes())}
+    print("Drawing graph")
+    pos = {
+        i: [float(graph[i][0]), float(graph[i][1])] for i in range(graph.num_nodes())
+    }
     positions = spring_layout(
         graph,
         pos=pos,
@@ -178,10 +236,16 @@ def main():
         repulsive_exponent=4,
         num_iter=1000,
         seed=1,
-        center=[0.0,0.0],
+        center=[0.0, 0.0],
     )
     fig = mpl_draw(
-        graph, node_size=5, with_labels=True, labels=str, font_size=2, pos=positions, font_color="red"
+        graph,
+        node_size=5,
+        with_labels=True,
+        labels=str,
+        font_size=2,
+        pos=positions,
+        font_color="red",
     )
     ax = fig.gca()
     ax.invert_yaxis()

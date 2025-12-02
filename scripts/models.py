@@ -30,5 +30,13 @@ class JsonStation(BaseModel):
         return self.dest.strip().lower().removeprefix("/dest ! ").split(" ")
 
 
+class JsonJunctionsData(BaseModel):
+    x: int
+    z: int
+    dests: list[str] = []
+    radius: int = 10
+
+
 class JsonJunctions(BaseModel):
     id: str
+    data: JsonJunctionsData
