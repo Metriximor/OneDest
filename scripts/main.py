@@ -25,6 +25,9 @@ COLOR_TO_REGION = {
     "#fcd20e": "karydia",
     "#ffa500": "founders",
     "#b02e26": "deluvia",
+    "#5e7c16": "deluvia",
+    "#169c9c": "deluvia",
+    "#3ab3da": "deluvia",
     "#8fd3ff": "arctic",
     "#e83b3b": "medi",
     "#32CD32": "ap",
@@ -82,13 +85,11 @@ def load_lines_to_graph(lines_file: str) -> tuple[PyGraph, dict[tuple[int, int],
     return graph, nodes
 
 
-def load_data() -> tuple[dict[str, JsonStation], Tree]:
+def load_stations_data() -> tuple[dict[str, JsonStation], Tree]:
     stations: dict[str, JsonStation] = {}
     one_dests = Tree()
     with (
         open(STATIONS_FILE, "r") as station_file,
-        open(LINES_FILE, "r") as lines_file,
-        open(JUNCTIONS_FILE, "r") as junctions_file,
     ):
         one_dests.create_node(identifier="!", tag="/dest !")
         for station_json in ijson.items(station_file, "features.item"):
@@ -124,17 +125,6 @@ def matchup_stations_to_nodes(
             continue
         matched.append((station, nearest_point))
     return matched
-
-
-def group_by_level(
-    stations_with_coords: list[tuple[JsonStation, tuple[int, int]]],
-) -> list[list[tuple[JsonStation, tuple[int, int]]]]:
-    temp: dict[int, list[tuple[JsonStation, tuple[int, int]]]] = {}
-    for station, coords in stations_with_coords:
-        if station.level not in temp:
-            temp[station.level] = []
-        temp[station.level].append((station, coords))
-    return [group for _, group in sorted(temp.items(), key=lambda item: item[0])]
 
 
 def pathfind(
@@ -178,19 +168,20 @@ def pathfind(
 
 def main():
     logging.info("Loading stations and one dest tree")
-    unmatched_stations, one_dest_tree = load_data()
+    unmatched_stations, one_dest_tree = load_stations_data()
     one_dest_tree.save2file("one_dest_tree.txt")
     logging.info("Loading rail graph")
     graph, nodes = load_lines_to_graph(LINES_FILE)
     logging.info("Matching stations to rail graph nodes")
-    grouped_stations = group_by_level(
-        matchup_stations_to_nodes(unmatched_stations, list(nodes.keys()))
-    )
-    level_3_stations = grouped_stations[0]
+    grouped_stations = matchup_stations_to_nodes(unmatched_stations, list(nodes.keys()))
     junctions: dict[tuple[int, int], set[str]] = {}
     i = 0
-    for station, coords in level_3_stations:
-        for dest_station, dest_coords in level_3_stations:
+    for station, coords in grouped_stations:
+        if station.level != 3:
+            continue
+        for dest_station, dest_coords in grouped_stations:
+            if dest_station.level != 3:
+                continue
             if i % 100 == 0:
                 logging.info(f"Calculated {i} paths")
             i += 1
@@ -204,25 +195,44 @@ def main():
                     junctions[coords] = set()
                 x, z = coords
                 node_quadrant = f"{'+' if x >= 0 else '-'},{'+' if z >= 0 else '-'}"
+                node_region = COLOR_TO_REGION[station.color]
                 dests = dest_station.get_dests()
                 quadrant = dests[0]
                 region = dests[1]
                 nation = dests[2]
+                if node_quadrant != quadrant and node_region == region:
+                    # for the weird edge cases like karydia's reggio
+                    junctions[coords].add(region)
+                    continue
                 if node_quadrant != quadrant:
                     junctions[coords].add(quadrant)
                     continue
-                if COLOR_TO_REGION[station.color] != region:
+                if node_region != region:
                     junctions[coords].add(region)
                     continue
                 junctions[coords].add(nation)
     with open("../TestJunctions.json", "w+") as junction_test:
-        junction_test.write(json.dumps({
-            "version": 4,
-            "name": "Automated OneDest Switches",
-            "source": "local:C75jC5ElD3ER/OneDest Switches",
-            "presentations": [{}],
-            "features": StreamArray((JsonJunctions(id=str(uuid4()), data=JsonJunctionsData(x=coords[0],z=coords[1],dests=list(junction))).model_dump() for coords, junction in junctions.items())),
-        }))
+        junction_test.write(
+            json.dumps(
+                {
+                    "version": 4,
+                    "name": "Automated OneDest Switches",
+                    "source": "local:C75jC5ElD3ER/OneDest Switches",
+                    "presentations": [{}],
+                    "features": StreamArray(
+                        (
+                            JsonJunctions(
+                                id=str(uuid4()),
+                                data=JsonJunctionsData(
+                                    x=coords[0], z=coords[1], dests=list(junction)
+                                ),
+                            ).model_dump()
+                            for coords, junction in junctions.items()
+                        )
+                    ),
+                }
+            )
+        )
 
     # positions = circular_layout(graph, center=(0,0))
     print("Drawing graph")
@@ -250,7 +260,7 @@ def main():
     ax = fig.gca()
     ax.invert_yaxis()
 
-    fig.savefig(f"graph.png", dpi=300)
+    fig.savefig("graph.png", dpi=300)
     print("Drawn")
 
 
