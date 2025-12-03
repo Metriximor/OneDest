@@ -27,7 +27,7 @@ COLOR_TO_REGION = {
     "#4e09ed": "moloka",
     "#ff00f3": "impendia",
     "#fcd20e": "aegis",
-    "#ff5e00": "lyrean"
+    "#ff5e00": "lyrean",
 }
 
 
@@ -208,6 +208,25 @@ def match_junctions_to_line(
             return line
 
 
+def route_iterator(
+    grouped_stations: list[tuple[JsonStation, tuple[int, int]]],
+) -> Iterator[tuple[int, JsonStation, tuple[int, int], JsonStation, tuple[int, int]]]:
+    cnt = 0
+    highest_level = max(station.level for station, _ in grouped_stations)
+    for level in range(3, highest_level):
+        logging.info(f"Processing level {level} routes")
+        for station, origin_coords in grouped_stations:
+            for dest_station, dest_coords in grouped_stations:
+                if station == dest_station:
+                    continue
+                if station.level != level or dest_station.level != level:
+                    continue
+                if cnt % 500 == 0:
+                    logging.info(f"Calculated {cnt} paths")
+                cnt += 1
+                yield level, station, origin_coords, dest_station, dest_coords
+
+
 def main():
     logging.info("Loading stations and one dest tree")
     unmatched_stations, one_dest_tree = load_stations_data()
@@ -219,68 +238,72 @@ def main():
     junctions = {}
     cnt = 0
     highest_level = max(station.level for station, _ in grouped_stations)
-    for level in range(3, highest_level+1):
-        logging.info(f"Processing level {level} routes")
-        for station, origin_coords in grouped_stations:
-            for dest_station, dest_coords in grouped_stations:
-                if station == dest_station:
+    for level, station, origin_coords, dest_station, dest_coords in route_iterator(grouped_stations):
+        path = pathfind(origin_coords, dest_coords, nodes, graph)
+        if path is None:
+            logging.error(
+                f"Couldn't pathfind to {dest_station.name} from {station.name}"
+            )
+            continue
+        for i in range(len(path) - 1):
+            coords = graph[path[i]]
+            if graph.degree(path[i]) <= 2:
+                continue
+            if coords not in junctions:
+                junctions[coords] = {}
+            x, z = coords
+            node_quadrant = f"{'+' if x >= 0 else '-'},{'+' if z >= 0 else '-'}"
+            dests = dest_station.get_dests()
+            quadrant = dests[0]
+            region = dests[1]
+            nation = dests[2]
+            successor = graph[path[i + 1]]
+            angle = math.degrees(
+                math.atan2(-(successor[1] - z), (successor[0] - x))
+            )
+            line = match_junctions_to_line(coords, successor, junction_to_lines)
+            node_region = COLOR_TO_REGION[line.color]
+            if angle not in junctions[coords]:
+                junctions[coords][angle] = set()
+            current_junction_dests = set()
+            for junction_angle in junctions[coords]:
+                current_junction_dests |= junctions[coords][junction_angle]
+
+            # for the cases where a region goes across quadrant boundaries
+            if node_quadrant != quadrant and node_region == region:
+                if (
+                    nation in current_junction_dests
+                    and nation not in junctions[coords][angle]
+                ):
+                    junctions[coords][angle].add(dests[3])
                     continue
-                if station.level != level or dest_station.level != level:
+                junctions[coords][angle].add(nation)
+                continue
+            if node_quadrant != quadrant:
+                if (
+                    quadrant in current_junction_dests
+                    and quadrant not in junctions[coords][angle]
+                ):
+                    junctions[coords][angle].add(region)
                     continue
-                if cnt % 500 == 0:
-                    logging.info(f"Calculated {cnt} paths")
-                cnt += 1
-                path = pathfind(origin_coords, dest_coords, nodes, graph)
-                if path is None:
-                    # logging.error(
-                    #     f"Couldn't pathfind to {dest_station.name} from {station.name}"
-                    # )
-                    continue
-                for i in range(len(path) - 1):
-                    coords = graph[path[i]]
-                    if graph.degree(path[i]) <= 2:
-                        continue
-                    if coords not in junctions:
-                        junctions[coords] = {}
-                    x, z = coords
-                    node_quadrant = f"{'+' if x >= 0 else '-'},{'+' if z >= 0 else '-'}"
-                    dests = dest_station.get_dests()
-                    quadrant = dests[0]
-                    region = dests[1]
-                    nation = dests[2]
-                    successor = graph[path[i + 1]]
-                    angle = math.degrees(math.atan2(-(successor[1] - z), (successor[0] - x)))
-                    line = match_junctions_to_line(coords, successor, junction_to_lines)
-                    node_region = COLOR_TO_REGION[line.color]
-                    if angle not in junctions[coords]:
-                        junctions[coords][angle] = set()
-                    current_junction_dests = set()
-                    for junction_angle in junctions[coords]:
-                        current_junction_dests |= junctions[coords][junction_angle]
-                    
-                    # for the cases where a region goes across quadrant boundaries
-                    if node_quadrant != quadrant and node_region == region:
-                        if nation in current_junction_dests and nation not in junctions[coords][angle]:
-                            junctions[coords][angle].add(dests[3])
-                            continue
-                        junctions[coords][angle].add(nation)
-                        continue
-                    if node_quadrant != quadrant:
-                        if quadrant in current_junction_dests and quadrant not in junctions[coords][angle]:
-                            junctions[coords][angle].add(region)
-                            continue
-                        junctions[coords][angle].add(quadrant)
-                        continue
-                    if node_region != region:
-                        if region in current_junction_dests and region not in junctions[coords][angle]:
-                            junctions[coords][angle].add(nation)
-                            continue
-                        junctions[coords][angle].add(region)
-                        continue
-                    if nation in current_junction_dests and nation not in junctions[coords][angle]:
-                        junctions[coords][angle].add(dests[3])
-                        continue
+                junctions[coords][angle].add(quadrant)
+                continue
+            if node_region != region:
+                if (
+                    region in current_junction_dests
+                    and region not in junctions[coords][angle]
+                ):
                     junctions[coords][angle].add(nation)
+                    continue
+                junctions[coords][angle].add(region)
+                continue
+            if (
+                nation in current_junction_dests
+                and nation not in junctions[coords][angle]
+            ):
+                junctions[coords][angle].add(dests[3])
+                continue
+            junctions[coords][angle].add(nation)
     # Map the set back into a list so I can dump it into a json
     output = {}
     for coord, junction in junctions.items():
