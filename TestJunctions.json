@@ -7,7 +7,7 @@
     ],
     "features": [
         {
-            "id": "73f37074-f63a-401c-8d2e-b45a9497862b",
+            "id": "2b22cf50-b137-4e22-b3de-c0bd293a31a6",
             "data": {
                 "x": 4061,
                 "z": -5315,
@@ -15,372 +15,121 @@
                     "-90.61": [
                         "newjersey"
                     ],
-                    "89.58": [
-                        "cordoba",
-                        "yngland",
-                        "aegis",
-                        "+,+",
-                        "spqr",
-                        "moloka",
-                        "fempire",
-                        "lyrean",
-                        "-,-"
-                    ],
                     "180.00": [
-                        "cityofengland"
+                        "spqr",
+                        "-,-",
+                        "-,+",
+                        "cityofengland",
+                        "moloka"
+                    ],
+                    "89.58": [
+                        "yngland",
+                        "cordoba",
+                        "aegis",
+                        "lyrean",
+                        "+,+"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "bb61a2a8-b0c4-4524-9480-c03d3da72ce6",
+            "id": "d4cea3c5-2fc7-4ead-b51b-aa9d30923fa1",
+            "data": {
+                "x": 3772,
+                "z": -5608,
+                "dests": {
+                    "-179.64": [
+                        "-,+",
+                        "-,-",
+                        "spqr",
+                        "moloka"
+                    ],
+                    "90.00": [
+                        "cityofengland"
+                    ],
+                    "-89.61": [
+                        "cascadia",
+                        "newjersey"
+                    ],
+                    "-0.14": [
+                        "yngland",
+                        "cordoba",
+                        "fempire",
+                        "aegis",
+                        "lyrean",
+                        "+,+"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "48237302-a9fd-4aea-93a5-840d38cce085",
             "data": {
                 "x": 4178,
                 "z": -5607,
                 "dests": {
                     "0.00": [
-                        "cordoba",
                         "yngland",
-                        "aegis",
-                        "+,+",
-                        "spqr",
-                        "moloka",
+                        "cordoba",
                         "fempire",
+                        "aegis",
                         "lyrean",
-                        "-,-"
+                        "+,+"
                     ],
                     "-90.00": [
-                        "newjersey",
-                        "cascadia"
+                        "cascadia",
+                        "newjersey"
                     ],
                     "179.86": [
-                        "cityofengland"
+                        "cityofengland",
+                        "-,-",
+                        "spqr",
+                        "moloka"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "0af2416b-86a7-4d6f-9d27-b707002e65a5",
+            "id": "6a3000bb-7ca8-4056-9bce-67cbd57bc2de",
             "data": {
                 "x": 5048,
                 "z": -5514,
                 "dests": {
-                    "0.12": [
-                        "aegis",
-                        "+,+",
-                        "spqr",
-                        "moloka",
-                        "fempire",
-                        "lyrean",
-                        "-,-"
-                    ],
                     "90.00": [
                         "yngland"
                     ],
                     "-88.36": [
                         "cordoba"
                     ],
-                    "180.00": [
-                        "cityofengland",
-                        "newjersey",
-                        "cascadia"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "c2cbbdf5-fec6-46b3-a42e-3084bfd9f868",
-            "data": {
-                "x": 5515,
-                "z": -5515,
-                "dests": {
-                    "-135.03": [
-                        "aegis",
-                        "+,+",
-                        "spqr",
-                        "moloka",
-                        "lyrean",
-                        "-,-"
-                    ],
-                    "45.00": [
-                        "fempire"
-                    ],
-                    "-179.88": [
-                        "cordoba",
-                        "newjersey",
-                        "yngland",
-                        "cascadia",
-                        "cityofengland"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "dc159839-db20-4db7-a3b1-22df552a406e",
-            "data": {
-                "x": 4434,
-                "z": -4435,
-                "dests": {
-                    "-134.98": [
-                        "+,+",
-                        "spqr",
-                        "moloka",
-                        "lyrean",
-                        "-,-"
-                    ],
-                    "0.00": [
-                        "khalkedonia"
-                    ],
-                    "44.97": [
-                        "cordoba",
-                        "newjersey",
-                        "yngland",
-                        "cascadia",
-                        "cityofengland",
-                        "fempire"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "459ed965-13f0-448f-a013-d659fc35baff",
-            "data": {
-                "x": 3019,
-                "z": -2613,
-                "dests": {
-                    "-90.00": [
-                        "impendia",
-                        "+,+",
-                        "lambat",
-                        "pavia",
-                        "mehri",
-                        "moloka",
-                        "-,-"
-                    ],
-                    "0.00": [
-                        "mehri"
-                    ],
-                    "90.71": [
-                        "impendia",
-                        "aegis"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "515cf7dd-6dc1-43b8-8c16-3703f2ec2eca",
-            "data": {
-                "x": 3019,
-                "z": -2596,
-                "dests": {
-                    "-135.31": [
-                        "impendia",
-                        "+,+",
-                        "lambat",
-                        "pavia",
-                        "mehri",
-                        "moloka",
-                        "-,-"
-                    ],
-                    "90.00": [
-                        "impendia",
-                        "aegis"
-                    ],
-                    "45.00": [
-                        "mehri"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "eb25448b-f309-4d78-8559-ce18cd52c77a",
-            "data": {
-                "x": 2642,
-                "z": -2223,
-                "dests": {
-                    "179.97": [
-                        "impendia",
-                        "pavia",
-                        "moloka",
-                        "-,-"
-                    ],
-                    "-135.00": [
-                        "lambat",
-                        "+,+",
-                        "mehri"
-                    ],
-                    "44.69": [
-                        "impendia",
-                        "aegis",
-                        "mehri"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "8620d6cd-2d3a-466c-b10e-b6e34e86c4c9",
-            "data": {
-                "x": 900,
-                "z": -2224,
-                "dests": {
-                    "180.00": [
-                        "impendia",
-                        "pavia",
-                        "moloka",
-                        "-,-"
-                    ],
-                    "90.00": [
-                        "pavia"
-                    ],
-                    "-0.03": [
-                        "impendia",
-                        "aegis",
-                        "+,+",
-                        "lambat",
-                        "mehri"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "15d8882d-0b72-4a4f-b9c4-0982d6e12459",
-            "data": {
-                "x": 790,
-                "z": -2224,
-                "dests": {
-                    "-179.78": [
-                        "impendia",
-                        "moloka",
-                        "-,-"
-                    ],
-                    "90.00": [
-                        "pavia"
-                    ],
-                    "0.00": [
-                        "impendia",
-                        "aegis",
-                        "+,+",
-                        "lambat",
-                        "pavia",
-                        "mehri"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "7fb6ef51-d225-4b51-a88d-8eb655922e66",
-            "data": {
-                "x": -65,
-                "z": -2221,
-                "dests": {
-                    "90.00": [
+                    "0.12": [
+                        "fempire",
                         "occident",
-                        "baile",
-                        "+,-",
-                        "stonegate",
-                        "deepslate"
+                        "-,+",
+                        "aegis",
+                        "karydia",
+                        "lyrean",
+                        "+,+",
+                        "moloka"
                     ],
-                    "-90.24": [
-                        "escobar"
-                    ],
-                    "0.00": [
-                        "+,-",
-                        "+,+"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "63399b51-2fa1-417b-9779-5dd3e34035bd",
-            "data": {
-                "x": -65,
-                "z": -2668,
-                "dests": {
-                    "90.00": [
-                        "+,-",
+                    "180.00": [
+                        "cascadia",
                         "stonegate",
                         "deepslate",
-                        "baile"
-                    ],
-                    "-179.91": [
-                        "volterra"
-                    ],
-                    "-90.00": [
-                        "escobar",
-                        "+,-",
-                        "+,+"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "68c99639-cd17-4f42-af89-b9d782424954",
-            "data": {
-                "x": 1210,
-                "z": -5650,
-                "dests": {
-                    "-0.48": [
-                        "impendia",
-                        "deepslate"
-                    ],
-                    "90.00": [
-                        "baile"
-                    ],
-                    "-89.94": [
-                        "impendia",
-                        "escobar",
-                        "aegis",
-                        "+,+",
-                        "stonegate",
-                        "lyrean",
-                        "-,-"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "506eb590-3dbc-43d4-a1af-7b577d16f3e2",
-            "data": {
-                "x": 3772,
-                "z": -5608,
-                "dests": {
-                    "90.00": [
-                        "cityofengland"
-                    ],
-                    "-89.61": [
-                        "newjersey",
-                        "cascadia"
-                    ],
-                    "-0.14": [
-                        "cordoba",
-                        "yngland",
-                        "aegis",
-                        "+,+",
                         "spqr",
-                        "moloka",
-                        "fempire",
-                        "lyrean",
-                        "-,-"
+                        "-,-",
+                        "cityofengland",
+                        "newjersey",
+                        "baile"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "f8837591-093a-4adb-b1b8-0f8dc55d10e5",
+            "id": "3dd62faf-b7d9-4a75-9603-93ebe0046ff4",
             "data": {
                 "x": 5048,
                 "z": -6165,
@@ -389,54 +138,280 @@
                         "yngland"
                     ],
                     "-90.00": [
-                        "cordoba",
-                        "newjersey",
-                        "aegis",
-                        "+,+",
                         "cascadia",
                         "spqr",
-                        "moloka",
+                        "-,-",
+                        "cordoba",
+                        "-,+",
                         "cityofengland",
+                        "newjersey",
+                        "aegis",
                         "lyrean",
-                        "-,-"
-                    ],
-                    "0.17": [
-                        "fempire"
+                        "+,+",
+                        "moloka"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "4358eac4-a3d5-4958-87e2-37496448507e",
+            "id": "fb2f03da-b740-4e64-87d5-ab3d04e7ed3e",
             "data": {
-                "x": 6089,
-                "z": -6168,
+                "x": 1210,
+                "z": -5650,
                 "dests": {
-                    "0.00": [
-                        "fempire"
-                    ],
-                    "-90.00": [
-                        "cordoba",
-                        "newjersey",
-                        "aegis",
-                        "+,+",
-                        "cascadia",
-                        "spqr",
-                        "moloka",
-                        "cityofengland",
+                    "-89.94": [
+                        "escobar",
+                        "stonegate",
+                        "-,+",
+                        "karydia",
                         "lyrean",
-                        "-,-"
+                        "occident",
+                        "+,+"
                     ],
-                    "-179.83": [
-                        "yngland"
+                    "89.94": [
+                        "-,-",
+                        "baile"
+                    ],
+                    "-0.48": [
+                        "impendia",
+                        "deepslate",
+                        "aegis"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "15374a9a-4a5d-4352-a599-05c1766406ef",
+            "id": "ea9f9b06-f756-4e6d-afdc-fa958cf85232",
+            "data": {
+                "x": -65,
+                "z": -2668,
+                "dests": {
+                    "-90.00": [
+                        "escobar",
+                        "deluvia",
+                        "+,+",
+                        "+,-"
+                    ],
+                    "-179.91": [
+                        "volterra",
+                        "-,+",
+                        "karydia",
+                        "micronook",
+                        "icenia"
+                    ],
+                    "90.00": [
+                        "deepslate",
+                        "stonegate",
+                        "northlandia",
+                        "impendia",
+                        "baile"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "f424a918-c1cb-41aa-920f-8ff946c90517",
+            "data": {
+                "x": -65,
+                "z": -2221,
+                "dests": {
+                    "-90.24": [
+                        "escobar"
+                    ],
+                    "0.00": [
+                        "deluvia",
+                        "+,+",
+                        "+,-"
+                    ],
+                    "90.00": [
+                        "stonegate",
+                        "deepslate",
+                        "-,+",
+                        "northlandia",
+                        "impendia",
+                        "karydia",
+                        "baile",
+                        "occident"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "726bd91e-9f63-4cac-909c-cc5b5797f5c6",
+            "data": {
+                "x": 1212,
+                "z": -7585,
+                "dests": {
+                    "90.13": [
+                        "baile"
+                    ],
+                    "180.00": [
+                        "winterbourne"
+                    ],
+                    "-90.06": [
+                        "escobar",
+                        "stonegate",
+                        "-,-",
+                        "-,+",
+                        "impendia",
+                        "aegis",
+                        "lyrean",
+                        "+,+"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "cd2c7a9c-f93c-4b4c-9812-c3a0db425c3f",
+            "data": {
+                "x": 5515,
+                "z": -5515,
+                "dests": {
+                    "-135.03": [
+                        "-,-",
+                        "-,+",
+                        "aegis",
+                        "lyrean",
+                        "+,+",
+                        "moloka"
+                    ],
+                    "-179.88": [
+                        "cascadia",
+                        "stonegate",
+                        "deepslate",
+                        "spqr",
+                        "yngland",
+                        "cordoba",
+                        "northlandia",
+                        "cityofengland",
+                        "newjersey",
+                        "baile"
+                    ],
+                    "45.00": [
+                        "fempire"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "82f1dbd1-b88d-486e-a709-a8e9887dfb91",
+            "data": {
+                "x": 4434,
+                "z": -4435,
+                "dests": {
+                    "-134.98": [
+                        "-,-",
+                        "-,+",
+                        "lyrean",
+                        "+,+",
+                        "moloka"
+                    ],
+                    "0.00": [
+                        "khalkedonia"
+                    ],
+                    "44.97": [
+                        "cascadia",
+                        "stonegate",
+                        "spqr",
+                        "yngland",
+                        "cordoba",
+                        "fempire",
+                        "northlandia",
+                        "cityofengland",
+                        "newjersey",
+                        "baile"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "60d536f5-2ddb-4104-8bb0-04812f5355f1",
+            "data": {
+                "x": 3019,
+                "z": -2613,
+                "dests": {
+                    "-90.00": [
+                        "lambat",
+                        "mehri",
+                        "-,-",
+                        "-,+",
+                        "pavia",
+                        "+,+",
+                        "moloka"
+                    ],
+                    "90.71": [
+                        "impendia",
+                        "aegis"
+                    ],
+                    "0.00": [
+                        "develhof"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "30812eae-1c4f-4343-bc4f-888534cd5155",
+            "data": {
+                "x": 3019,
+                "z": -2596,
+                "dests": {
+                    "-135.31": [
+                        "lambat",
+                        "mehri",
+                        "-,-",
+                        "-,+",
+                        "pavia",
+                        "+,+",
+                        "moloka"
+                    ],
+                    "90.00": [
+                        "impendia",
+                        "aegis"
+                    ],
+                    "45.00": [
+                        "develhof"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "26492c7d-e1fe-4f3b-9d1b-0b768db92460",
+            "data": {
+                "x": 2642,
+                "z": -2223,
+                "dests": {
+                    "-135.00": [
+                        "lambat",
+                        "mehri",
+                        "deluvia",
+                        "+,+"
+                    ],
+                    "179.97": [
+                        "-,+",
+                        "-,-",
+                        "pavia",
+                        "moloka"
+                    ],
+                    "44.69": [
+                        "impendia",
+                        "aegis",
+                        "develhof"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "b1059e43-1201-434d-a6f6-ddaddaf550d5",
             "data": {
                 "x": 2600,
                 "z": -2151,
@@ -446,147 +421,103 @@
                     ],
                     "-90.00": [
                         "lambat",
-                        "+,+",
-                        "mehri"
+                        "deluvia",
+                        "thijo",
+                        "+,+"
                     ],
                     "90.00": [
+                        "-,-",
+                        "-,+",
                         "impendia",
                         "aegis",
                         "pavia",
-                        "mehri",
-                        "moloka",
-                        "-,-"
+                        "develhof",
+                        "moloka"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "344434ff-883f-47da-9557-29a825fa2dda",
-            "data": {
-                "x": 3036,
-                "z": -2613,
-                "dests": {
-                    "45.00": [
-                        "mehri"
-                    ],
-                    "180.00": [
-                        "impendia",
-                        "aegis"
-                    ],
-                    "-135.00": [
-                        "impendia",
-                        "+,+",
-                        "lambat",
-                        "pavia",
-                        "mehri",
-                        "moloka",
-                        "-,-"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "ea96f4d4-b249-40b6-aee6-1009295e0cce",
+            "id": "73ad91d4-4e36-4dee-84f2-262675b392e3",
             "data": {
                 "x": 2600,
                 "z": -1701,
                 "dests": {
-                    "-179.15": [
-                        "mehri"
-                    ],
                     "0.00": [
-                        "+,+",
-                        "lambat"
+                        "lambat",
+                        "deluvia",
+                        "+,+"
                     ],
                     "90.00": [
+                        "mehri",
+                        "-,-",
+                        "-,+",
                         "impendia",
                         "aegis",
                         "pavia",
-                        "mehri",
-                        "moloka",
-                        "-,-"
+                        "moloka"
+                    ],
+                    "-179.15": [
+                        "thijo"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "e183b9da-ea7c-485b-9c8e-05fec600a804",
-            "data": {
-                "x": 2465,
-                "z": -1699,
-                "dests": {
-                    "179.74": [
-                        "mehri"
-                    ],
-                    "-89.48": [
-                        "mehri"
-                    ],
-                    "0.85": [
-                        "impendia",
-                        "aegis",
-                        "+,+",
-                        "lambat",
-                        "pavia",
-                        "mehri",
-                        "moloka",
-                        "-,-"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "293e451e-829f-4da6-9357-16c46657880a",
+            "id": "09217565-7c60-49d5-a5cb-4c05f6769452",
             "data": {
                 "x": 3050,
                 "z": -1701,
                 "dests": {
                     "-90.00": [
-                        "+,+",
-                        "lambat"
+                        "lambat",
+                        "deluvia",
+                        "+,+"
                     ],
                     "180.00": [
+                        "mehri",
+                        "-,-",
+                        "-,+",
                         "impendia",
                         "aegis",
                         "pavia",
-                        "mehri",
-                        "moloka",
-                        "-,-"
+                        "moloka"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "c3b0abbb-e1f1-4134-a8b4-3f2282a938a4",
+            "id": "5280b94b-1c7b-4d8b-a6d7-08eaa36c5136",
             "data": {
                 "x": 3050,
                 "z": -1358,
                 "dests": {
                     "-0.40": [
-                        "+,+",
-                        "lambat"
+                        "lambat",
+                        "medi"
                     ],
                     "-90.00": [
+                        "deluvia",
                         "+,+"
                     ],
                     "90.00": [
+                        "mehri",
+                        "-,-",
+                        "-,+",
                         "impendia",
                         "aegis",
                         "pavia",
-                        "mehri",
-                        "moloka",
-                        "-,-"
+                        "moloka"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "debc2699-a01f-44b0-8d1d-36d75493b3d4",
+            "id": "48a794b8-5e07-4689-a0d9-a58f745b0b7b",
             "data": {
                 "x": 3480,
                 "z": -1355,
@@ -595,148 +526,158 @@
                         "lambat"
                     ],
                     "-90.00": [
-                        "+,+",
-                        "lambat"
-                    ],
-                    "179.60": [
-                        "impendia",
-                        "aegis",
-                        "+,+",
-                        "pavia",
-                        "mehri",
-                        "moloka",
-                        "-,-"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "3c4b3358-f153-43b5-8214-3a3a61994eab",
-            "data": {
-                "x": 3887,
-                "z": -1322,
-                "dests": {
-                    "-161.57": [
-                        "lambat"
-                    ],
-                    "-14.04": [
+                        "pioneer",
                         "+,+"
                     ],
-                    "90.00": [
+                    "179.60": [
+                        "mehri",
+                        "ap",
+                        "medi",
+                        "-,-",
+                        "-,+",
                         "impendia",
                         "aegis",
-                        "+,+",
-                        "lambat",
                         "pavia",
-                        "mehri",
-                        "moloka",
-                        "-,-"
+                        "arctic",
+                        "moloka"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "e73b2f98-d004-4fa6-80e4-14858b7be484",
+            "id": "6913af8a-95ae-4884-827a-1b88a176c8f1",
+            "data": {
+                "x": 900,
+                "z": -2224,
+                "dests": {
+                    "90.00": [
+                        "pavia"
+                    ],
+                    "180.00": [
+                        "spqr",
+                        "-,-",
+                        "-,+",
+                        "sandtopia",
+                        "moloka"
+                    ],
+                    "-0.03": [
+                        "lambat",
+                        "mehri",
+                        "deluvia",
+                        "impendia",
+                        "aegis",
+                        "+,+"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "70cff89d-69c5-4b53-a644-dac528aaa7b7",
             "data": {
                 "x": 3050,
                 "z": 847,
                 "dests": {
                     "-90.00": [
-                        "ap",
-                        "medi",
-                        "kaiyaukuta",
+                        "nara",
                         "venne",
+                        "kaiyaukuta",
+                        "ap",
+                        "anisso",
+                        "deluvia",
+                        "medi",
+                        "papal",
                         "cigno",
                         "mta",
-                        "anisso",
-                        "nswisston",
-                        "papal",
-                        "nara",
-                        "skandic"
+                        "skandic",
+                        "nswisston"
                     ],
                     "-45.06": [
-                        "santiago",
                         "transylvania",
+                        "santiago",
                         "eldoria",
                         "arctic",
+                        "truidencia",
                         "danzilona",
-                        "lusitania",
-                        "truidencia"
+                        "lusitania"
                     ],
                     "90.00": [
-                        "+,-",
-                        "-,-"
+                        "-,+",
+                        "-,-",
+                        "+,-"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "7ec32b1e-1f9e-4d17-bbbf-1f891aec990f",
+            "id": "6ccf765e-75a6-41dd-a380-1d13b8a3706f",
             "data": {
                 "x": 3050,
                 "z": 1069,
                 "dests": {
                     "-0.45": [
+                        "qbarra",
                         "rivia",
-                        "accra",
-                        "qbarra"
+                        "accra"
                     ],
                     "-90.00": [
-                        "ap",
+                        "nara",
                         "kaiyaukuta",
                         "venne",
+                        "ap",
+                        "anisso",
+                        "deluvia",
+                        "papal",
                         "cigno",
                         "mta",
-                        "anisso",
-                        "nswisston",
-                        "papal",
-                        "nara",
-                        "skandic"
+                        "skandic",
+                        "nswisston"
                     ],
                     "90.00": [
-                        "+,-",
-                        "snowpeak",
                         "medi",
-                        "-,-"
+                        "-,-",
+                        "+,-",
+                        "-,+",
+                        "snowpeak"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "bbb2678e-c7cf-4ef7-9377-922ab460f0c3",
+            "id": "f78dd3f2-1364-4818-a09c-146f525785a3",
             "data": {
                 "x": 4840,
                 "z": 1083,
                 "dests": {
                     "-0.47": [
-                        "rivia",
-                        "qbarra"
+                        "qbarra",
+                        "rivia"
                     ],
                     "90.00": [
                         "accra"
                     ],
                     "179.55": [
-                        "santiago",
-                        "transylvania",
                         "ap",
+                        "transylvania",
+                        "santiago",
                         "eldoria",
-                        "arctic",
-                        "danzilona",
+                        "-,-",
                         "+,-",
-                        "lusitania",
+                        "-,+",
+                        "arctic",
                         "truidencia",
-                        "-,-"
+                        "danzilona",
+                        "lusitania"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "d2acd714-ac0c-47ba-b298-382431b14446",
+            "id": "9b1177fd-226b-495a-b810-a635530d6c4c",
             "data": {
                 "x": 6650,
                 "z": 1098,
@@ -748,24 +689,25 @@
                         "rivia"
                     ],
                     "179.53": [
-                        "santiago",
-                        "transylvania",
                         "ap",
+                        "transylvania",
+                        "santiago",
                         "eldoria",
-                        "arctic",
-                        "danzilona",
+                        "-,-",
                         "+,-",
-                        "lusitania",
+                        "-,+",
+                        "arctic",
                         "truidencia",
-                        "accra",
-                        "-,-"
+                        "danzilona",
+                        "lusitania",
+                        "accra"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "8b306dcf-2e20-4674-8fcd-570ec51bebeb",
+            "id": "4eaf2054-a860-4a62-8186-62f41d5a5e8b",
             "data": {
                 "x": 4810,
                 "z": 3180,
@@ -774,28 +716,30 @@
                         "ap",
                         "transylvania",
                         "eldoria",
+                        "karydia",
                         "arctic",
+                        "truidencia",
                         "danzilona",
-                        "lusitania",
-                        "truidencia"
+                        "lusitania"
                     ],
                     "0.00": [
                         "santiago"
                     ],
                     "89.70": [
                         "-,-",
-                        "arctic",
-                        "+,-",
                         "rivia",
-                        "accra",
-                        "qbarra"
+                        "+,-",
+                        "mta",
+                        "-,+",
+                        "qbarra",
+                        "accra"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "688ffd9b-a910-4ef3-b73b-47977efa2775",
+            "id": "9d8fa8a8-8a46-4235-8117-d3adc7333377",
             "data": {
                 "x": 4799,
                 "z": 3950,
@@ -803,10 +747,12 @@
                     "-90.89": [
                         "ap",
                         "transylvania",
+                        "deluvia",
                         "eldoria",
+                        "karydia",
                         "arctic",
-                        "danzilona",
-                        "truidencia"
+                        "truidencia",
+                        "danzilona"
                     ],
                     "0.00": [
                         "lusitania"
@@ -814,18 +760,19 @@
                     "89.18": [
                         "santiago",
                         "-,-",
-                        "arctic",
-                        "+,-",
                         "rivia",
-                        "accra",
-                        "qbarra"
+                        "+,-",
+                        "mta",
+                        "-,+",
+                        "qbarra",
+                        "accra"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "68c41679-58bf-4e60-8716-0e6383ad7040",
+            "id": "ae071e78-a6d0-4d39-9229-2d79bbf06dc2",
             "data": {
                 "x": 4783,
                 "z": 5050,
@@ -835,38 +782,41 @@
                     ],
                     "-90.12": [
                         "truidencia",
-                        "eldoria",
                         "transylvania",
-                        "arctic"
+                        "arctic",
+                        "eldoria"
                     ],
                     "89.89": [
                         "santiago",
                         "-,-",
-                        "danzilona",
-                        "+,-",
-                        "lusitania",
                         "rivia",
-                        "accra",
-                        "qbarra"
+                        "+,-",
+                        "-,+",
+                        "qbarra",
+                        "sophia",
+                        "lusitania",
+                        "accra"
                     ],
                     "179.94": [
-                        "ap",
+                        "nara",
                         "kaiyaukuta",
                         "venne",
+                        "ap",
+                        "anisso",
+                        "deluvia",
+                        "papal",
                         "cigno",
                         "mta",
-                        "anisso",
-                        "nswisston",
-                        "papal",
-                        "nara",
-                        "skandic"
+                        "skandic",
+                        "karydia",
+                        "nswisston"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "d2d3764c-97aa-46aa-9588-01c6ee407d45",
+            "id": "18efd8dd-e510-4a32-bf57-a104f20738e8",
             "data": {
                 "x": 4781,
                 "z": 5978,
@@ -876,27 +826,30 @@
                     ],
                     "-90.17": [
                         "truidencia",
-                        "eldoria",
-                        "arctic"
+                        "arctic",
+                        "eldoria"
                     ],
                     "89.88": [
-                        "santiago",
+                        "kaiyaukuta",
                         "ap",
+                        "santiago",
                         "-,-",
-                        "arctic",
-                        "danzilona",
-                        "+,-",
-                        "lusitania",
                         "rivia",
-                        "accra",
-                        "qbarra"
+                        "cigno",
+                        "+,-",
+                        "mta",
+                        "-,+",
+                        "qbarra",
+                        "danzilona",
+                        "lusitania",
+                        "accra"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "616a9edc-8fea-4aa1-a7e5-5ccf394e8cb9",
+            "id": "35f7328f-7fc5-4add-9a48-eb4bdd174e68",
             "data": {
                 "x": 5340,
                 "z": 5757,
@@ -905,28 +858,59 @@
                         "transylvania"
                     ],
                     "-135.26": [
-                        "santiago",
+                        "kaiyaukuta",
                         "ap",
+                        "santiago",
                         "-,-",
-                        "arctic",
-                        "danzilona",
-                        "+,-",
-                        "lusitania",
                         "rivia",
-                        "accra",
-                        "qbarra"
+                        "cigno",
+                        "+,-",
+                        "mta",
+                        "-,+",
+                        "qbarra",
+                        "danzilona",
+                        "lusitania",
+                        "accra"
                     ],
                     "-90.25": [
                         "truidencia",
-                        "eldoria",
-                        "arctic"
+                        "arctic",
+                        "eldoria"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "4ff9afe9-83b2-431b-8c99-fb3d9c5d44a2",
+            "id": "905f8d3a-d7c3-416f-a1d2-bf2975f83568",
+            "data": {
+                "x": 3887,
+                "z": -1322,
+                "dests": {
+                    "-14.04": [
+                        "+,+"
+                    ],
+                    "90.00": [
+                        "lambat",
+                        "mehri",
+                        "medi",
+                        "-,-",
+                        "-,+",
+                        "impendia",
+                        "aegis",
+                        "pavia",
+                        "arctic",
+                        "moloka"
+                    ],
+                    "-161.57": [
+                        "pioneer"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "d67b7dd5-6997-4b4e-b4b9-e48584d09ccb",
             "data": {
                 "x": 6451,
                 "z": 3950,
@@ -935,27 +919,30 @@
                         "lusitania"
                     ],
                     "135.00": [
-                        "+,-",
-                        "-,-"
+                        "-,+",
+                        "-,-",
+                        "+,-"
                     ],
                     "180.00": [
-                        "santiago",
-                        "transylvania",
                         "ap",
+                        "transylvania",
+                        "deluvia",
+                        "santiago",
                         "eldoria",
-                        "arctic",
-                        "danzilona",
                         "rivia",
+                        "qbarra",
+                        "karydia",
+                        "arctic",
                         "truidencia",
-                        "accra",
-                        "qbarra"
+                        "danzilona",
+                        "accra"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "6a9772b4-1e1d-4539-a53e-d417a52d74a2",
+            "id": "10787d86-181a-4b96-ad6b-3fe1e7192408",
             "data": {
                 "x": 7770,
                 "z": 3950,
@@ -963,29 +950,30 @@
                     "0.00": [
                         "lusitania"
                     ],
-                    "-90.00": [
-                        "lusitania"
-                    ],
                     "180.00": [
-                        "santiago",
-                        "transylvania",
                         "ap",
-                        "-,-",
+                        "transylvania",
+                        "santiago",
                         "eldoria",
-                        "arctic",
-                        "danzilona",
-                        "+,-",
+                        "-,-",
                         "rivia",
+                        "+,-",
+                        "-,+",
+                        "qbarra",
+                        "arctic",
                         "truidencia",
-                        "accra",
-                        "qbarra"
+                        "danzilona",
+                        "accra"
+                    ],
+                    "-90.00": [
+                        "cascais"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "58bff878-1c23-49a3-9739-90b16c0ade92",
+            "id": "744df194-1700-4ca8-b5bc-52fbd6a43ce9",
             "data": {
                 "x": 5370,
                 "z": 6638,
@@ -995,23 +983,23 @@
                         "eldoria"
                     ],
                     "-90.00": [
-                        "snowpeak",
-                        "venne",
                         "nswisston",
+                        "venne",
                         "papal",
-                        "skandic"
+                        "snowpeak"
                     ],
                     "180.00": [
-                        "santiago",
                         "ap",
+                        "santiago",
                         "-,-",
+                        "rivia",
+                        "+,-",
+                        "-,+",
+                        "qbarra",
                         "arctic",
                         "danzilona",
-                        "+,-",
                         "lusitania",
-                        "rivia",
-                        "accra",
-                        "qbarra"
+                        "accra"
                     ],
                     "90.00": [
                         "transylvania"
@@ -1021,7 +1009,7 @@
             }
         },
         {
-            "id": "1e4b57ce-78ec-4e16-b762-a41ee0a45b9c",
+            "id": "b3926049-267b-4fda-97e7-d6c94012389c",
             "data": {
                 "x": 6000,
                 "z": 6637,
@@ -1033,48 +1021,61 @@
                         "eldoria"
                     ],
                     "-179.91": [
-                        "santiago",
-                        "transylvania",
                         "ap",
+                        "transylvania",
+                        "santiago",
                         "-,-",
+                        "rivia",
+                        "+,-",
+                        "-,+",
+                        "qbarra",
                         "arctic",
                         "danzilona",
-                        "+,-",
                         "lusitania",
-                        "rivia",
-                        "accra",
-                        "qbarra"
+                        "accra"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "12824210-aa64-4c72-8791-07522cccb5f7",
+            "id": "9296bee1-d661-42af-8f0c-e3a533e6b900",
             "data": {
                 "x": 3366,
                 "z": 5050,
                 "dests": {
                     "0.12": [
-                        "snowpeak",
-                        "medi",
+                        "ichino",
                         "venne",
-                        "nswisston",
+                        "transylvania",
+                        "santiago",
                         "papal",
-                        "nara",
-                        "skandic"
+                        "eldoria",
+                        "truidencia",
+                        "skandic",
+                        "nswisston",
+                        "danzilona",
+                        "lusitania",
+                        "snowpeak"
                     ],
                     "90.00": [
-                        "ap",
+                        "nara",
                         "kaiyaukuta",
-                        "cigno",
+                        "ap",
                         "anisso",
-                        "nara"
+                        "cigno"
                     ],
                     "180.00": [
-                        "mta",
-                        "+,-",
                         "medi",
+                        "+,-",
+                        "mta",
+                        "northlandia",
+                        "karydia",
+                        "occident",
+                        "founders"
+                    ],
+                    "-90.00": [
+                        "-,+",
                         "-,-"
                     ]
                 },
@@ -1082,70 +1083,79 @@
             }
         },
         {
-            "id": "7676dfff-ff52-4f1c-929f-b12683f05088",
+            "id": "893e93a9-ef08-447d-b612-de3f69b36118",
             "data": {
                 "x": 3841,
                 "z": 5049,
                 "dests": {
                     "-90.00": [
-                        "venne",
-                        "nswisston",
-                        "papal",
                         "nara",
-                        "skandic"
+                        "venne",
+                        "papal",
+                        "skandic",
+                        "nswisston"
                     ],
                     "-179.88": [
-                        "ap",
-                        "medi",
                         "kaiyaukuta",
+                        "ap",
+                        "anisso",
+                        "medi",
+                        "-,-",
                         "cigno",
                         "mta",
                         "+,-",
-                        "anisso",
-                        "nara",
-                        "-,-"
+                        "-,+",
+                        "shiroyama"
                     ],
                     "-0.06": [
-                        "snowpeak",
-                        "medi"
+                        "transylvania",
+                        "santiago",
+                        "eldoria",
+                        "truidencia",
+                        "danzilona",
+                        "lusitania",
+                        "snowpeak"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "8f8273ee-f36f-4b7d-87ac-52d9f5015e50",
+            "id": "c08a7a64-e667-4ca4-a3f2-f1d3a02a6599",
             "data": {
                 "x": 3841,
                 "z": 7687,
                 "dests": {
                     "-133.56": [
                         "nswisston",
-                        "papal",
                         "skandic",
-                        "venne"
+                        "venne",
+                        "papal"
                     ],
                     "-90.00": [
-                        "ap",
-                        "medi",
-                        "kaiyaukuta",
-                        "cigno",
-                        "+,-",
-                        "mta",
-                        "anisso",
                         "nara",
-                        "-,-"
+                        "kaiyaukuta",
+                        "ap",
+                        "anisso",
+                        "medi",
+                        "-,-",
+                        "cigno",
+                        "mta",
+                        "+,-",
+                        "-,+"
                     ],
                     "0.04": [
-                        "snowpeak",
-                        "medi"
+                        "truidencia",
+                        "transylvania",
+                        "eldoria",
+                        "snowpeak"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "396308c4-6e7d-4958-b565-a7a8edfb55b9",
+            "id": "1601953f-461d-48f9-9ffd-9e8d7498a30c",
             "data": {
                 "x": 2700,
                 "z": 8770,
@@ -1159,23 +1169,24 @@
                         "venne"
                     ],
                     "0.12": [
-                        "snowpeak",
-                        "ap",
-                        "medi",
-                        "kaiyaukuta",
-                        "cigno",
-                        "+,-",
-                        "mta",
-                        "anisso",
                         "nara",
-                        "-,-"
+                        "kaiyaukuta",
+                        "ap",
+                        "anisso",
+                        "medi",
+                        "-,-",
+                        "cigno",
+                        "mta",
+                        "+,-",
+                        "-,+",
+                        "snowpeak"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "4b2e8112-61ec-4b17-ab93-a6cb44c3f05e",
+            "id": "6b1950b2-8d09-4e02-9f42-bd8b75cb2160",
             "data": {
                 "x": 5365,
                 "z": 7686,
@@ -1184,179 +1195,153 @@
                         "snowpeak"
                     ],
                     "-179.96": [
-                        "venne",
                         "nswisston",
-                        "papal",
-                        "nara",
-                        "skandic"
+                        "venne",
+                        "papal"
                     ],
                     "0.00": [
+                        "kaiyaukuta",
                         "ap",
                         "medi",
-                        "kaiyaukuta",
+                        "-,-",
                         "cigno",
-                        "+,-",
                         "mta",
-                        "anisso",
-                        "nara",
-                        "-,-"
+                        "+,-",
+                        "-,+"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "6327ce07-3560-4b93-95ec-36ca799d1320",
+            "id": "fa2c56c9-71e6-43c9-bcd7-076ed24883ef",
             "data": {
                 "x": 1906,
                 "z": 8776,
                 "dests": {
+                    "179.85": [
+                        "venne",
+                        "skandic"
+                    ],
+                    "0.43": [
+                        "nara",
+                        "kaiyaukuta",
+                        "ap",
+                        "anisso",
+                        "medi",
+                        "papal",
+                        "-,-",
+                        "cigno",
+                        "mta",
+                        "+,-",
+                        "-,+",
+                        "snowpeak"
+                    ],
                     "0.57": [
                         "nswisston"
                     ],
                     "180.00": [
-                        "nswisston"
-                    ],
-                    "179.85": [
-                        "skandic",
-                        "venne"
-                    ],
-                    "0.43": [
-                        "snowpeak",
-                        "ap",
-                        "medi",
-                        "kaiyaukuta",
-                        "cigno",
-                        "+,-",
-                        "mta",
-                        "anisso",
-                        "papal",
-                        "nara",
-                        "-,-"
+                        "hotel"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "93239c30-8175-4082-8820-48e4c69de6e6",
+            "id": "b7ff8c87-3ffd-4cca-969d-21ff9800ba7d",
             "data": {
                 "x": 3366,
                 "z": 5046,
                 "dests": {
                     "0.00": [
-                        "cigno",
+                        "kaiyaukuta",
                         "anisso",
-                        "kaiyaukuta"
+                        "cigno"
                     ],
                     "133.83": [
                         "aldenfult"
                     ],
                     "-90.00": [
-                        "snowpeak",
-                        "medi",
-                        "venne",
-                        "+,-",
-                        "mta",
-                        "nswisston",
-                        "papal",
                         "nara",
+                        "venne",
+                        "medi",
+                        "papal",
                         "-,-",
-                        "skandic"
+                        "mta",
+                        "+,-",
+                        "-,+",
+                        "skandic",
+                        "nswisston",
+                        "snowpeak"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "d568bba4-1af2-4e6b-9c02-2bf3f0fdf259",
+            "id": "5f90a900-b6cd-4175-aba6-6ff673953a76",
             "data": {
                 "x": 1873,
                 "z": 7466,
                 "dests": {
                     "-133.37": [
-                        "anisso",
-                        "kaiyaukuta"
+                        "kaiyaukuta",
+                        "anisso"
                     ],
                     "-0.44": [
                         "cigno"
                     ],
                     "46.74": [
-                        "snowpeak",
+                        "nara",
+                        "venne",
                         "ap",
                         "medi",
-                        "venne",
-                        "+,-",
-                        "mta",
-                        "nswisston",
                         "papal",
-                        "nara",
                         "-,-",
-                        "skandic"
+                        "mta",
+                        "+,-",
+                        "-,+",
+                        "skandic",
+                        "nswisston",
+                        "snowpeak"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "da0439e4-4cdf-42a8-9ec0-e0c966e55cd0",
+            "id": "284fbdc9-6ba3-4f89-af51-f99d3b2e37cb",
             "data": {
                 "x": 1582,
                 "z": 7774,
                 "dests": {
-                    "-90.30": [
-                        "anisso"
-                    ],
                     "89.72": [
                         "kaiyaukuta"
                     ],
                     "46.63": [
-                        "snowpeak",
-                        "ap",
-                        "medi",
+                        "nara",
                         "venne",
-                        "cigno",
-                        "+,-",
-                        "mta",
-                        "nswisston",
-                        "papal",
-                        "nara",
-                        "-,-",
-                        "skandic"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "bf771fc9-edde-4ece-890f-986ce746b2b3",
-            "data": {
-                "x": 735,
-                "z": 8900,
-                "dests": {
-                    "-90.00": [
-                        "skandic"
-                    ],
-                    "90.00": [
-                        "snowpeak",
                         "ap",
                         "medi",
-                        "kaiyaukuta",
-                        "cigno",
-                        "+,-",
-                        "mta",
-                        "anisso",
-                        "nswisston",
                         "papal",
-                        "nara",
-                        "-,-"
+                        "-,-",
+                        "cigno",
+                        "mta",
+                        "+,-",
+                        "-,+",
+                        "skandic",
+                        "nswisston",
+                        "snowpeak"
+                    ],
+                    "-90.30": [
+                        "anisso"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "0c8e30b5-3fbb-4f2e-8200-82077b00a8dc",
+            "id": "e6994860-c856-4de6-8305-a420a4439e61",
             "data": {
                 "x": 2291,
                 "z": 4050,
@@ -1365,9 +1350,10 @@
                         "aldenfult"
                     ],
                     "-45.24": [
-                        "+,-",
                         "medi",
                         "-,-",
+                        "+,-",
+                        "-,+",
                         "arctic"
                     ]
                 },
@@ -1375,20 +1361,150 @@
             }
         },
         {
-            "id": "ffc112ed-562f-46e9-bfaf-6eedbd142dd7",
+            "id": "8f7f50db-56d5-4438-8876-7ce11afa997c",
             "data": {
-                "x": 5978,
-                "z": -6315,
+                "x": -1380,
+                "z": -1335,
                 "dests": {
-                    "128.95": [
-                        "fempire"
+                    "180.00": [
+                        "volterra",
+                        "-,+",
+                        "karydia",
+                        "micronook",
+                        "icenia"
+                    ],
+                    "90.00": [
+                        "northlandia",
+                        "+,+",
+                        "+,-",
+                        "warmia"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "e3c0bddd-00af-4074-81a0-6cf92fd08035",
+            "id": "40506050-188d-4cad-9f09-86525a9566ac",
+            "data": {
+                "x": -1690,
+                "z": -1180,
+                "dests": {
+                    "-90.00": [
+                        "volterra",
+                        "-,+",
+                        "karydia",
+                        "micronook",
+                        "icenia"
+                    ],
+                    "90.00": [
+                        "northlandia",
+                        "+,+",
+                        "+,-",
+                        "warmia"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "6a3e2b26-cd43-4e94-bb76-23d46c5f813d",
+            "data": {
+                "x": -1690,
+                "z": -1163,
+                "dests": {
+                    "-179.86": [
+                        "-,+",
+                        "icenia",
+                        "karydia",
+                        "micronook"
+                    ],
+                    "90.00": [
+                        "northlandia",
+                        "+,+",
+                        "+,-",
+                        "warmia"
+                    ],
+                    "-90.00": [
+                        "volterra"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "8030c08d-3bfa-4916-958f-e7a4e5beef72",
+            "data": {
+                "x": -2930,
+                "z": -1160,
+                "dests": {
+                    "-136.74": [
+                        "-,+",
+                        "icenia",
+                        "karydia"
+                    ],
+                    "90.00": [
+                        "micronook"
+                    ],
+                    "180.00": [
+                        "northlandia",
+                        "+,+",
+                        "volterra",
+                        "+,-"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "74522603-aee1-4475-b55b-2ca4994eb980",
+            "data": {
+                "x": -4904,
+                "z": -921,
+                "dests": {
+                    "-89.94": [
+                        "-,+"
+                    ],
+                    "90.00": [
+                        "deluvia",
+                        "icenia",
+                        "karydia"
+                    ],
+                    "-0.03": [
+                        "volterra",
+                        "+,-",
+                        "northlandia",
+                        "micronook",
+                        "+,+"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "f42c551d-962b-40a5-a68b-31cc5445aa46",
+            "data": {
+                "x": -3993,
+                "z": 958,
+                "dests": {
+                    "-89.94": [
+                        "melonwood"
+                    ],
+                    "180.00": [
+                        "petergrad"
+                    ],
+                    "90.06": [
+                        "-,-",
+                        "cw",
+                        "+,-",
+                        "karydia",
+                        "+,+"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "642cc9c9-fa20-4a9f-bab5-f691d3d8cd55",
             "data": {
                 "x": -4904,
                 "z": -1068,
@@ -1396,15 +1512,617 @@
                     "90.00": [
                         "icenia"
                     ],
-                    "-89.95": [
-                        "-,+"
+                    "180.00": [
+                        "-,+",
+                        "karydia"
+                    ],
+                    "-90.00": [
+                        "volterra",
+                        "+,-",
+                        "northlandia",
+                        "micronook",
+                        "+,+",
+                        "founders"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "75f2ae58-28d6-4c9e-84af-eeaf03912662",
+            "id": "b3e5855a-bd52-4a87-a8a5-6109487e83f2",
+            "data": {
+                "x": -5214,
+                "z": -1068,
+                "dests": {
+                    "90.00": [
+                        "pacem"
+                    ],
+                    "180.00": [
+                        "icarus",
+                        "mercutio",
+                        "deluvia",
+                        "kardovia"
+                    ],
+                    "0.00": [
+                        "volterra",
+                        "+,-",
+                        "-,+",
+                        "northlandia",
+                        "micronook",
+                        "icenia",
+                        "+,+"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "598f7558-c1d4-45ec-ad57-4ae567319251",
+            "data": {
+                "x": -7931,
+                "z": -43,
+                "dests": {
+                    "180.00": [
+                        "icarus",
+                        "kardovia"
+                    ],
+                    "0.00": [
+                        "medi",
+                        "mercutio",
+                        "+,-",
+                        "-,+",
+                        "northlandia",
+                        "arctic",
+                        "occident",
+                        "pacem"
+                    ],
+                    "-106.14": [
+                        "deluvia",
+                        "+,+"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "7e9bd44e-ca10-4ad6-9a29-5a15d8bbeae3",
+            "data": {
+                "x": -7934,
+                "z": -50,
+                "dests": {
+                    "180.00": [
+                        "icarus",
+                        "kardovia"
+                    ],
+                    "-90.00": [
+                        "mercutio",
+                        "+,-",
+                        "-,+",
+                        "northlandia",
+                        "occident",
+                        "+,+",
+                        "pacem"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "56654cb5-e0e7-47a7-857c-359eab45859c",
+            "data": {
+                "x": -8969,
+                "z": -120,
+                "dests": {
+                    "90.00": [
+                        "icarus"
+                    ],
+                    "0.00": [
+                        "mercutio",
+                        "+,-",
+                        "-,+",
+                        "northlandia",
+                        "occident",
+                        "+,+",
+                        "pacem",
+                        "kardovia"
+                    ],
+                    "-89.94": [
+                        "ap",
+                        "arctic",
+                        "medi"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "405f7ae0-2e17-47ff-b3f4-8ab0c0c704d4",
+            "data": {
+                "x": 790,
+                "z": -2224,
+                "dests": {
+                    "0.00": [
+                        "lambat",
+                        "mehri",
+                        "deluvia",
+                        "impendia",
+                        "aegis",
+                        "pavia",
+                        "+,+"
+                    ],
+                    "-179.78": [
+                        "-,+",
+                        "-,-",
+                        "spqr",
+                        "moloka"
+                    ],
+                    "90.00": [
+                        "sandtopia"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "e098f386-8134-4692-80a3-a89d59f42b83",
+            "data": {
+                "x": -600,
+                "z": 5634,
+                "dests": {
+                    "-179.89": [
+                        "imperial",
+                        "-,-",
+                        "bay",
+                        "east",
+                        "karydia",
+                        "southsea"
+                    ],
+                    "-0.10": [
+                        "occident",
+                        "+,+",
+                        "+,-"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "f2e9213e-cc28-46da-9bcb-ffa818ac330b",
+            "data": {
+                "x": -2462,
+                "z": 5668,
+                "dests": {
+                    "89.38": [
+                        "vallstena",
+                        "-,-",
+                        "groveheart",
+                        "karydia",
+                        "southsea"
+                    ],
+                    "0.44": [
+                        "occident",
+                        "+,+",
+                        "+,-"
+                    ],
+                    "-90.00": [
+                        "imperial",
+                        "east",
+                        "bay"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "31028a73-c045-4ea7-9192-0e39ca59c37a",
+            "data": {
+                "x": -2888,
+                "z": 4862,
+                "dests": {
+                    "134.70": [
+                        "-,-",
+                        "bay",
+                        "karydia",
+                        "southsea"
+                    ],
+                    "-88.96": [
+                        "imperial",
+                        "vermont",
+                        "+,-",
+                        "east",
+                        "oldsurmadri",
+                        "+,+"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "8d7aad12-1c10-4539-bf6c-58dd3c856042",
+            "data": {
+                "x": -3890,
+                "z": 4382,
+                "dests": {
+                    "-179.63": [
+                        "-,-",
+                        "bay",
+                        "karydia",
+                        "southsea"
+                    ],
+                    "0.46": [
+                        "imperial",
+                        "vermont",
+                        "+,-",
+                        "east",
+                        "freeport",
+                        "oldsurmadri",
+                        "+,+"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "a1758178-12f9-4855-b174-9332a5541149",
+            "data": {
+                "x": -5287,
+                "z": 4703,
+                "dests": {
+                    "180.00": [
+                        "-,-",
+                        "bay",
+                        "karydia",
+                        "lyrean",
+                        "moloka"
+                    ],
+                    "0.15": [
+                        "imperial",
+                        "vermont",
+                        "+,-",
+                        "east",
+                        "freeport",
+                        "oldsurmadri",
+                        "+,+"
+                    ],
+                    "90.00": [
+                        "southsea"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "c8423434-e078-4fc2-9a12-aa548331ca40",
+            "data": {
+                "x": -6339,
+                "z": 4703,
+                "dests": {
+                    "119.74": [
+                        "-,-",
+                        "groveheart",
+                        "karydia",
+                        "lyrean",
+                        "moloka"
+                    ],
+                    "0.00": [
+                        "imperial",
+                        "vermont",
+                        "+,-",
+                        "east",
+                        "southsea",
+                        "oldsurmadri",
+                        "+,+"
+                    ],
+                    "-52.45": [
+                        "bay"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "5c5079e7-236e-4004-9faa-cbedad1d836c",
+            "data": {
+                "x": -6483,
+                "z": 4451,
+                "dests": {
+                    "134.87": [
+                        "-,-",
+                        "karydia",
+                        "+,-"
+                    ],
+                    "-60.26": [
+                        "imperial",
+                        "vermont",
+                        "vallstena",
+                        "impendia",
+                        "east",
+                        "southsea",
+                        "lyrean",
+                        "oldsurmadri",
+                        "+,+"
+                    ],
+                    "-129.95": [
+                        "bay"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "4b54d229-25f0-441c-89a6-fcf63884c791",
+            "data": {
+                "x": -8622,
+                "z": 1732,
+                "dests": {
+                    "71.57": [
+                        "-,-",
+                        "mercutio",
+                        "+,-"
+                    ],
+                    "179.83": [
+                        "icarus",
+                        "kardovia"
+                    ],
+                    "-89.90": [
+                        "deluvia",
+                        "+,+"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "12ec5532-fb56-4d81-a317-3a8eb59648dc",
+            "data": {
+                "x": -7995,
+                "z": 1402,
+                "dests": {
+                    "49.40": [
+                        "-,-",
+                        "mercutio",
+                        "+,-"
+                    ],
+                    "-175.52": [
+                        "deluvia",
+                        "+,+"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "498af43d-c148-4b8f-8624-b986e1c370f0",
+            "data": {
+                "x": -7722,
+                "z": 652,
+                "dests": {
+                    "180.00": [
+                        "-,-",
+                        "mercutio",
+                        "+,-"
+                    ],
+                    "-89.59": [
+                        "deluvia",
+                        "+,+"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "9ceec8a0-7d1c-497d-88f3-eaee1e9bbb35",
+            "data": {
+                "x": 735,
+                "z": 8900,
+                "dests": {
+                    "90.00": [
+                        "nara",
+                        "kaiyaukuta",
+                        "ap",
+                        "anisso",
+                        "medi",
+                        "papal",
+                        "-,-",
+                        "cigno",
+                        "mta",
+                        "+,-",
+                        "-,+",
+                        "nswisston",
+                        "snowpeak"
+                    ],
+                    "-90.00": [
+                        "skandic"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "d0a239d6-c1be-42ee-9358-69f4a3d4eafa",
+            "data": {
+                "x": -3590,
+                "z": 1990,
+                "dests": {
+                    "179.57": [
+                        "petergrad",
+                        "-,-",
+                        "cw",
+                        "+,-",
+                        "karydia",
+                        "+,+"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "318a3c6f-3ce8-49b9-8e6f-e8d3b2ade4fd",
+            "data": {
+                "x": -6431,
+                "z": 1408,
+                "dests": {
+                    "0.00": [
+                        "carolina"
+                    ],
+                    "-90.00": [
+                        "reggio"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "a2065bbb-8337-4705-b038-887f75e15a8a",
+            "data": {
+                "x": 6089,
+                "z": -6168,
+                "dests": {
+                    "-90.00": [
+                        "-,-",
+                        "-,+",
+                        "lyrean",
+                        "+,+",
+                        "moloka"
+                    ],
+                    "0.00": [
+                        "fempire"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "3fd8309f-ac8b-47f8-94b5-fa46495b3574",
+            "data": {
+                "x": 3036,
+                "z": -2613,
+                "dests": {
+                    "45.00": [
+                        "mehri"
+                    ],
+                    "180.00": [
+                        "impendia"
+                    ],
+                    "-135.00": [
+                        "lambat",
+                        "-,-",
+                        "-,+",
+                        "thijo",
+                        "pavia",
+                        "+,+",
+                        "moloka"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "204bb3e2-e48d-4745-96b4-2150d46743ad",
+            "data": {
+                "x": 2465,
+                "z": -1699,
+                "dests": {
+                    "179.74": [
+                        "mehri"
+                    ],
+                    "0.85": [
+                        "lambat",
+                        "-,-",
+                        "-,+",
+                        "impendia",
+                        "pavia",
+                        "+,+",
+                        "develhof",
+                        "moloka"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "1593f02f-60c2-45d6-85ca-5f3cabafb00b",
+            "data": {
+                "x": -2458,
+                "z": 6356,
+                "dests": {
+                    "-89.95": [
+                        "imperial",
+                        "east",
+                        "bay"
+                    ],
+                    "90.82": [
+                        "alx"
+                    ],
+                    "180.00": [
+                        "vallstena",
+                        "-,-",
+                        "+,-",
+                        "groveheart",
+                        "southsea",
+                        "+,+"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "028560e1-8d81-4701-8f24-48147cf871ac",
+            "data": {
+                "x": -2457,
+                "z": 7553,
+                "dests": {
+                    "-90.00": [
+                        "imperial",
+                        "bay"
+                    ],
+                    "0.00": [
+                        "east"
+                    ],
+                    "90.05": [
+                        "alx",
+                        "vallstena",
+                        "-,-",
+                        "+,-",
+                        "groveheart",
+                        "southsea",
+                        "+,+"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "3cad63c2-1291-4f5d-8856-714f85ce1f09",
+            "data": {
+                "x": -2850,
+                "z": 8039,
+                "dests": {
+                    "-178.15": [
+                        "imperial"
+                    ],
+                    "0.00": [
+                        "bay",
+                        "regensburg",
+                        "priderock",
+                        "godhaven",
+                        "nalora"
+                    ],
+                    "91.09": [
+                        "vallstena",
+                        "-,-",
+                        "+,-",
+                        "groveheart",
+                        "east",
+                        "southsea",
+                        "+,+"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "112dd1df-08ec-4fdf-bb9f-30a282c417fe",
             "data": {
                 "x": -2317,
                 "z": 8476,
@@ -1414,17 +2132,26 @@
                     ],
                     "-140.91": [
                         "bay",
-                        "imperial"
+                        "regensburg",
+                        "nalora"
                     ],
                     "135.20": [
-                        "imperial"
+                        "vallstena",
+                        "southsea",
+                        "-,-",
+                        "+,-",
+                        "groveheart",
+                        "east",
+                        "newcallisto",
+                        "aethia",
+                        "+,+"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "b87cfc5d-3efe-4af4-9ff6-e096af665f75",
+            "id": "cf117341-8cdc-4517-9228-c737386862f4",
             "data": {
                 "x": -3256,
                 "z": 8029,
@@ -1433,66 +2160,107 @@
                         "imperial"
                     ],
                     "-0.73": [
+                        "southsea",
+                        "-,-",
                         "bay",
-                        "imperial"
+                        "regensburg",
+                        "+,-",
+                        "east",
+                        "priderock",
+                        "aethia",
+                        "godhaven",
+                        "+,+",
+                        "nalora"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "a204525c-150b-4cdd-b8b2-d9249c70c1ea",
+            "id": "a73e190b-9029-4c8c-b8da-2f99358c43eb",
             "data": {
                 "x": -3512,
                 "z": 8927,
                 "dests": {
                     "91.30": [
-                        "bay",
-                        "imperial"
+                        "imperial",
+                        "bay"
                     ],
                     "0.25": [
-                        "imperial"
+                        "vallstena",
+                        "southsea",
+                        "-,-",
+                        "+,-",
+                        "groveheart",
+                        "newcallisto",
+                        "east",
+                        "priderock",
+                        "aethia",
+                        "godhaven",
+                        "+,+"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "efc2e60a-4f18-47c4-812a-b337569556bd",
+            "id": "8d1d6268-b088-4157-abe5-0158d984797b",
             "data": {
                 "x": -3523,
                 "z": 8802,
                 "dests": {
                     "90.65": [
-                        "bay",
-                        "imperial"
+                        "imperial",
+                        "bay"
                     ],
                     "-88.45": [
-                        "imperial"
+                        "vallstena",
+                        "southsea",
+                        "-,-",
+                        "regensburg",
+                        "+,-",
+                        "groveheart",
+                        "newcallisto",
+                        "east",
+                        "priderock",
+                        "aethia",
+                        "godhaven",
+                        "+,+"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "b535c099-3b23-4778-be49-9bea7a8a608d",
+            "id": "9c0fea6c-a955-49a0-89c4-a1397ea12ea0",
             "data": {
                 "x": -3425,
                 "z": 7553,
                 "dests": {
                     "180.00": [
-                        "bay",
-                        "imperial"
+                        "imperial",
+                        "bay"
                     ],
                     "-90.00": [
-                        "imperial"
+                        "vallstena",
+                        "southsea",
+                        "-,-",
+                        "regensburg",
+                        "+,-",
+                        "groveheart",
+                        "newcallisto",
+                        "east",
+                        "priderock",
+                        "aethia",
+                        "godhaven",
+                        "+,+"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "fd89bc3a-20df-436f-8d4c-5efddb94a640",
+            "id": "f19200a9-687f-4947-bdc6-380b67f01c73",
             "data": {
                 "x": -3591,
                 "z": 7553,
@@ -1504,14 +2272,50 @@
                         "bay"
                     ],
                     "0.00": [
-                        "imperial"
+                        "vallstena",
+                        "southsea",
+                        "-,-",
+                        "regensburg",
+                        "+,-",
+                        "groveheart",
+                        "newcallisto",
+                        "east",
+                        "priderock",
+                        "aethia",
+                        "godhaven",
+                        "+,+"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "4c558819-ee82-4c4d-b537-b86ff2ace5bc",
+            "id": "3b022ff4-026b-4205-8add-2fa72201a5d3",
+            "data": {
+                "x": -2430,
+                "z": 7553,
+                "dests": {
+                    "99.46": [
+                        "east"
+                    ],
+                    "0.00": [
+                        "esberg"
+                    ],
+                    "180.00": [
+                        "alx",
+                        "imperial",
+                        "-,-",
+                        "bay",
+                        "+,-",
+                        "southsea",
+                        "+,+"
+                    ]
+                },
+                "radius": 10
+            }
+        },
+        {
+            "id": "57936254-3eaf-41b7-a9f8-c9bc9c50cc28",
             "data": {
                 "x": -4923,
                 "z": 7553,
@@ -1520,201 +2324,24 @@
                         "bay"
                     ],
                     "180.00": [
-                        "bay"
+                        "vermont"
                     ],
                     "0.09": [
-                        "imperial"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "20e3975f-4f34-4da0-81c7-150072f78c39",
-            "data": {
-                "x": -6349,
-                "z": 7553,
-                "dests": {
-                    "90.00": [
-                        "bay"
-                    ],
-                    "0.00": [
-                        "bay",
-                        "imperial"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "913b5c32-75d6-493c-b813-859f67db2b10",
-            "data": {
-                "x": -2430,
-                "z": 7553,
-                "dests": {
-                    "0.00": [
-                        "east"
-                    ],
-                    "180.00": [
-                        "bay",
-                        "karydia",
-                        "southsea",
+                        "imperial",
+                        "vallstena",
+                        "-,-",
+                        "+,-",
+                        "groveheart",
                         "east",
-                        "-,-"
-                    ],
-                    "99.46": [
-                        "east"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "5705890c-64a4-4162-88ab-956414c3a1ed",
-            "data": {
-                "x": -2457,
-                "z": 7553,
-                "dests": {
-                    "90.05": [
-                        "bay",
-                        "karydia",
                         "southsea",
-                        "east",
-                        "-,-"
-                    ],
-                    "0.00": [
-                        "east"
+                        "+,+"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "5d74535c-ab25-4542-914e-b83ecabbbbda",
-            "data": {
-                "x": -2458,
-                "z": 6356,
-                "dests": {
-                    "90.82": [
-                        "east"
-                    ],
-                    "180.00": [
-                        "bay",
-                        "southsea",
-                        "-,-",
-                        "karydia"
-                    ],
-                    "-89.95": [
-                        "east"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "a155d3b9-321b-4e3f-9189-486c56650c6f",
-            "data": {
-                "x": -2462,
-                "z": 5668,
-                "dests": {
-                    "89.38": [
-                        "bay",
-                        "southsea",
-                        "-,-",
-                        "karydia"
-                    ],
-                    "-90.00": [
-                        "east"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "c156dbe1-f17e-497d-b949-a971309c6fe7",
-            "data": {
-                "x": -2888,
-                "z": 4862,
-                "dests": {
-                    "134.70": [
-                        "bay",
-                        "southsea",
-                        "-,-",
-                        "karydia"
-                    ],
-                    "-88.96": [
-                        "east"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "ac04a0b8-17ca-4298-9f48-fb34f6b9da08",
-            "data": {
-                "x": -3890,
-                "z": 4382,
-                "dests": {
-                    "-179.63": [
-                        "bay",
-                        "southsea",
-                        "-,-",
-                        "karydia"
-                    ],
-                    "0.46": [
-                        "east",
-                        "southsea"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "e5678ca2-165b-49d0-879f-39955abd84a3",
-            "data": {
-                "x": -5287,
-                "z": 4703,
-                "dests": {
-                    "180.00": [
-                        "bay",
-                        "-,-",
-                        "karydia"
-                    ],
-                    "90.00": [
-                        "southsea"
-                    ],
-                    "0.15": [
-                        "east",
-                        "southsea"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "cfde05ed-7f18-4d2d-b8a3-cdb5e1c20fb4",
-            "data": {
-                "x": -6339,
-                "z": 4703,
-                "dests": {
-                    "-52.45": [
-                        "bay"
-                    ],
-                    "119.74": [
-                        "bay",
-                        "-,-",
-                        "karydia"
-                    ],
-                    "0.00": [
-                        "east",
-                        "southsea"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "e5ea221d-2c59-4266-824a-ab6f93e6ab3b",
+            "id": "1ed3b299-fe56-4ba5-9224-70f361fdff85",
             "data": {
                 "x": -4923,
                 "z": 6545,
@@ -1723,183 +2350,58 @@
                         "bay"
                     ],
                     "127.55": [
-                        "bay",
-                        "karydia",
-                        "southsea",
+                        "imperial",
+                        "vermont",
+                        "-,-",
+                        "+,-",
+                        "groveheart",
                         "east",
-                        "-,-"
+                        "southsea",
+                        "oldsurmadri",
+                        "+,+"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "2f13337e-753d-4bad-9e9c-b68176a0b226",
+            "id": "b3dd4ee3-9c96-4138-acdf-cbed9225ae0d",
             "data": {
-                "x": -6483,
-                "z": 4451,
+                "x": -6349,
+                "z": 7553,
                 "dests": {
-                    "-129.95": [
+                    "90.00": [
                         "bay"
                     ],
-                    "134.87": [
+                    "0.00": [
+                        "imperial",
+                        "vallstena",
                         "-,-",
-                        "karydia"
-                    ],
-                    "-60.26": [
+                        "+,-",
+                        "groveheart",
                         "east",
-                        "bay",
-                        "southsea"
+                        "southsea",
+                        "oldsurmadri",
+                        "+,+"
                     ]
                 },
                 "radius": 10
             }
         },
         {
-            "id": "d20da85e-7bed-471d-ba04-4ebf5b2a9959",
+            "id": "a3cedb2c-1cc2-4a08-ae03-3a967e2e797e",
             "data": {
-                "x": -8622,
-                "z": 1732,
-                "dests": {
-                    "71.57": [
-                        "mercutio",
-                        "pacem"
-                    ],
-                    "179.83": [
-                        "kardovia",
-                        "icarus"
-                    ],
-                    "-89.90": [
-                        "deluvia"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "724a1a77-f132-4cf2-aab1-13ec055951cf",
-            "data": {
-                "x": -7995,
-                "z": 1402,
-                "dests": {
-                    "49.40": [
-                        "mercutio",
-                        "pacem"
-                    ],
-                    "-175.52": [
-                        "deluvia"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "1ba163ab-72bc-4c9c-87ee-4e6d67e0baf7",
-            "data": {
-                "x": -7722,
-                "z": 652,
-                "dests": {
-                    "180.00": [
-                        "mercutio",
-                        "pacem"
-                    ],
-                    "-89.59": [
-                        "deluvia"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "f86b74e7-7bef-4920-82c3-129992ca6464",
-            "data": {
-                "x": -7931,
-                "z": -43,
+                "x": -1690,
+                "z": -1158,
                 "dests": {
                     "0.00": [
-                        "mercutio",
-                        "pacem"
+                        "volterra"
                     ],
-                    "-106.14": [
-                        "-,+"
-                    ],
-                    "180.00": [
-                        "kardovia",
-                        "icarus"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "c41cecc0-321e-48c2-a567-932b8219c2e0",
-            "data": {
-                "x": -5214,
-                "z": -1068,
-                "dests": {
                     "90.00": [
-                        "pacem"
-                    ],
-                    "180.00": [
-                        "mercutio",
-                        "kardovia",
-                        "icarus",
-                        "-,+"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "eb703ea6-5734-4d00-98c7-e9caeb661338",
-            "data": {
-                "x": -8969,
-                "z": -120,
-                "dests": {
-                    "90.00": [
-                        "icarus"
-                    ],
-                    "0.00": [
-                        "mercutio",
-                        "kardovia",
-                        "pacem"
-                    ],
-                    "-89.94": [
-                        "-,+"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "edd2598e-1d47-43b8-b71e-333bb8b74d45",
-            "data": {
-                "x": -7934,
-                "z": -50,
-                "dests": {
-                    "180.00": [
-                        "kardovia",
-                        "icarus"
-                    ],
-                    "-90.00": [
-                        "mercutio",
-                        "pacem"
-                    ]
-                },
-                "radius": 10
-            }
-        },
-        {
-            "id": "b95e17f4-a33f-4585-9d74-c903ae674bc2",
-            "data": {
-                "x": -6431,
-                "z": 1408,
-                "dests": {
-                    "0.00": [
-                        "carolina"
-                    ],
-                    "-90.00": [
-                        "reggio"
+                        "-,+",
+                        "+,+",
+                        "+,-",
+                        "warmia"
                     ]
                 },
                 "radius": 10
