@@ -4,7 +4,7 @@ import numpy as np
 import logging
 import json
 from uuid import uuid4
-from typing import Iterator, Optional, TypeVar
+from typing import Iterable, Iterator, Optional, TypeVar
 from pydantic import ValidationError
 from treelib import Tree
 from models import JsonStation, JsonLine, JsonJunctions, JsonJunctionsData
@@ -16,21 +16,18 @@ STATIONS_FILE = "../OneDestStations.json"
 LINES_FILE = "../OneDestLines.json"
 JUNCTIONS_FILE = "../OneDestJunctions.json"
 COLOR_TO_REGION = {
-    "#0eaf9b": "lyrean",
-    "#d9b5ff": "impendia",
-    "#fcff94": "aegis",
-    "#8B0000": "northlandia",
-    "#534582": "moloka",
-    "#024F30": "occident",
-    "#fcd20e": "karydia",
-    "#ffa500": "founders",
-    "#b02e26": "deluvia",
-    "#5e7c16": "deluvia",
-    "#169c9c": "deluvia",
-    "#3ab3da": "deluvia",
-    "#8fd3ff": "arctic",
     "#e83b3b": "medi",
-    "#32CD32": "ap",
+    "#00a1de": "arctic",
+    "#3FBE23": "ap",
+    "#8c100a": "deluvia",
+    "#41EADF": "karydia",
+    "#013220": "occident",
+    "#ffa500": "founders",
+    "#8B0000": "northlandia",
+    "#4e09ed": "moloka",
+    "#ff00f3": "impendia",
+    "#fcd20e": "aegis",
+    "#ff5e00": "lyrean"
 }
 
 
@@ -44,6 +41,23 @@ class StreamArray(list):
 
     def __len__(self):
         return 1
+
+
+T = TypeVar("T")
+
+
+def pairwise_with_tail(iterable: Iterable[T]) -> Iterator[tuple[T, Optional[T]]]:
+    it = iter(iterable)
+    try:
+        prev: T = next(it)
+    except StopIteration:
+        return  # empty iterable → yields nothing
+
+    for curr in it:
+        yield prev, curr
+        prev = curr
+
+    yield prev, None
 
 
 def euclidean_distance(p1: tuple[int, int], p2: tuple[int, int]) -> float:
@@ -60,7 +74,9 @@ def flatten_dict_lists(d: dict[F]) -> list[F]:
     return out
 
 
-def load_lines_to_graph(lines_file: str) -> tuple[PyGraph, dict[tuple[int, int], int]]:
+def load_lines_to_graph(
+    lines_file: str,
+) -> tuple[PyGraph, dict[tuple[int, int], int], dict[tuple[int, int], list[JsonLine]]]:
     nodes: dict[tuple[int, int], int] = {}
     lines: list[JsonLine] = []
     graph = PyGraph()
@@ -82,26 +98,33 @@ def load_lines_to_graph(lines_file: str) -> tuple[PyGraph, dict[tuple[int, int],
                 start, end = polyline[i], polyline[i + 1]
                 weight = euclidean_distance(start, end)
                 graph.add_edge(nodes[start], nodes[end], weight)
-    return graph, nodes
+
+    junction_to_lines: dict[tuple[int, int], list[JsonLine]] = {}
+    for line_data in lines:
+        for polyline in line_data.line:
+            for point in polyline:
+                if point not in junction_to_lines:
+                    junction_to_lines[point] = []
+                junction_to_lines[point].append(line_data)
+    return graph, nodes, junction_to_lines
 
 
 def load_stations_data() -> tuple[dict[str, JsonStation], Tree]:
     stations: dict[str, JsonStation] = {}
     one_dests = Tree()
-    with (
-        open(STATIONS_FILE, "r") as station_file,
-    ):
+    with (open(STATIONS_FILE, "r") as station_file,):
         one_dests.create_node(identifier="!", tag="/dest !")
         for station_json in ijson.items(station_file, "features.item"):
             station = JsonStation.model_validate(station_json)
             stations[station.name] = station
             parent = "!"
             for dest in station.get_dests():
-                if dest in (node.identifier for node in one_dests.children(parent)):
-                    parent = dest
+                id = f"{parent}/{dest}"
+                if id in (node.identifier for node in one_dests.children(parent)):
+                    parent = id
                     continue
-                one_dests.create_node(identifier=dest, parent=parent)
-                parent = dest
+                one_dests.create_node(identifier=id, tag=dest, parent=parent)
+                parent = id
     return stations, one_dests
 
 
@@ -158,12 +181,31 @@ def pathfind(
     except NoPathFound:
         return None
 
-    junctions = []
-    for i in path_indices:
-        if graph.degree(i) <= 2:
-            continue
-        junctions.append(graph[i])
-    return junctions
+    return path_indices
+
+
+def match_junctions_to_line(
+    starting: tuple[int, int],
+    ending: tuple[int, int],
+    junctions_to_lines: dict[tuple[int, int], list[JsonLine]],
+) -> JsonLine:
+    starting_junction_lines = junctions_to_lines[starting]
+    ending_junction_lines = junctions_to_lines[ending]
+    matches = set()
+    for line in starting_junction_lines:
+        if line in ending_junction_lines:
+            matches.add(line.id)
+    matches = list(matches)
+
+    if len(matches) == 0:
+        raise ValueError("No junction found")
+    if len(matches) > 1:
+        raise ValueError(
+            f"More than one junction found for {starting} and {ending}: {matches}"
+        )
+    for line in starting_junction_lines:
+        if line.id == matches[0]:
+            return line
 
 
 def main():
@@ -171,43 +213,73 @@ def main():
     unmatched_stations, one_dest_tree = load_stations_data()
     one_dest_tree.save2file("one_dest_tree.txt")
     logging.info("Loading rail graph")
-    graph, nodes = load_lines_to_graph(LINES_FILE)
+    graph, nodes, junction_to_lines = load_lines_to_graph(LINES_FILE)
     logging.info("Matching stations to rail graph nodes")
     grouped_stations = matchup_stations_to_nodes(unmatched_stations, list(nodes.keys()))
-    junctions: dict[tuple[int, int], set[str]] = {}
-    i = 0
-    for station, coords in grouped_stations:
+    junctions = {}
+    cnt = 0
+    for station, origin_coords in grouped_stations:
         for dest_station, dest_coords in grouped_stations:
-            if i % 100 == 0:
-                logging.info(f"Calculated {i} paths")
-            i += 1
             if station == dest_station:
                 continue
-            path = pathfind(coords, dest_coords, nodes, graph)
+            # if station.level != 3 or dest_station.level != 3:
+                # continue
+            if cnt % 100 == 0:
+                logging.info(f"Calculated {cnt} paths")
+            cnt += 1
+            path = pathfind(origin_coords, dest_coords, nodes, graph)
             if path is None:
+                # logging.error(
+                #     f"Couldn't pathfind to {dest_station.name} from {station.name}"
+                # )
                 continue
-            for coords in path:
+            for i in range(len(path) - 1):
+                coords = graph[path[i]]
+                if graph.degree(path[i]) <= 2:
+                    continue
                 if coords not in junctions:
-                    junctions[coords] = set()
+                    junctions[coords] = {}
                 x, z = coords
                 node_quadrant = f"{'+' if x >= 0 else '-'},{'+' if z >= 0 else '-'}"
-                node_region = COLOR_TO_REGION[station.color]
                 dests = dest_station.get_dests()
                 quadrant = dests[0]
                 region = dests[1]
                 nation = dests[2]
+                successor = graph[path[i + 1]]
+                dx = successor[0] - x 
+                dy = successor[1] - z 
+                angle = math.degrees(math.atan2(-dy, dx))
+                line = match_junctions_to_line(coords, successor, junction_to_lines)
+                node_region = COLOR_TO_REGION[line.color]
+                if angle not in junctions[coords]:
+                    junctions[coords][angle] = set()
+                    
                 if node_quadrant != quadrant and node_region == region:
-                    # for the weird edge cases like karydia's reggio
-                    junctions[coords].add(region)
+                    # for the cases where a region goes across quadrant boundaries
+                    junctions[coords][angle].add(nation)
                     continue
                 if node_quadrant != quadrant:
-                    junctions[coords].add(quadrant)
+                    junctions[coords][angle].add(quadrant)
                     continue
                 if node_region != region:
-                    junctions[coords].add(region)
+                    junctions[coords][angle].add(region)
                     continue
-                junctions[coords].add(nation)
+                junctions[coords][angle].add(nation)
+    # Map the set back into a list so I can dump it into a json
+    output = {}
+    for coord, junction in junctions.items():
+        output[coord] = {}
+        for id, dest_set in junction.items():
+            output[coord][f"{id:.2f}"] = list(dest_set)
     with open("../TestJunctions.json", "w+") as junction_test:
+        # junction_test.write(json.dumps(output))
+        junction_dump = StreamArray(
+            JsonJunctions(
+                id=str(uuid4()),
+                data=JsonJunctionsData(x=coords[0], z=coords[1], dests=junction),
+            ).model_dump()
+            for coords, junction in output.items()
+        )
         junction_test.write(
             json.dumps(
                 {
@@ -215,26 +287,14 @@ def main():
                     "name": "Automated OneDest Switches",
                     "source": "local:C75jC5ElD3ER/OneDest Switches",
                     "presentations": [{}],
-                    "features": StreamArray(
-                        (
-                            JsonJunctions(
-                                id=str(uuid4()),
-                                data=JsonJunctionsData(
-                                    x=coords[0], z=coords[1], dests=list(junction)
-                                ),
-                            ).model_dump()
-                            for coords, junction in junctions.items()
-                        )
-                    ),
+                    "features": junction_dump,
                 }
             )
         )
 
     # positions = circular_layout(graph, center=(0,0))
     print("Drawing graph")
-    pos = {
-        i: [float(graph[i][0]), float(graph[i][1])] for i in range(graph.num_nodes())
-    }
+    pos = {i: graph[i] for i in range(graph.num_nodes())}
     positions = spring_layout(
         graph,
         pos=pos,
@@ -242,7 +302,7 @@ def main():
         repulsive_exponent=4,
         num_iter=1000,
         seed=1,
-        center=[0.0, 0.0],
+        center=(0.0, 0.0),
     )
     fig = mpl_draw(
         graph,
@@ -253,6 +313,7 @@ def main():
         pos=positions,
         font_color="red",
     )
+    assert fig is not None
     ax = fig.gca()
     ax.invert_yaxis()
 

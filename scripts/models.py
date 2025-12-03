@@ -1,5 +1,5 @@
-from typing import Optional
-from pydantic import BaseModel
+from typing import Any, Optional
+from pydantic import BaseModel, ConfigDict
 
 
 class Coordinate(BaseModel):
@@ -33,7 +33,7 @@ class JsonStation(BaseModel):
 class JsonJunctionsData(BaseModel):
     x: int
     z: int
-    dests: list[str] = []
+    dests: Any
     radius: int = 10
 
 
