@@ -4,7 +4,7 @@ import numpy as np
 import logging
 import json
 from uuid import uuid4
-from typing import Iterable, Iterator, Optional, TypeVar
+from typing import Iterator, Optional, TypeVar
 from pydantic import ValidationError
 from treelib import Tree
 from models import JsonStation, JsonLine, JsonJunctions, JsonJunctionsData
@@ -45,16 +45,6 @@ class StreamArray(list):
 
 def euclidean_distance(p1: tuple[int, int], p2: tuple[int, int]) -> float:
     return math.sqrt((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2)
-
-
-F = TypeVar("F")
-
-
-def flatten_dict_lists(d: dict[F]) -> list[F]:
-    out = []
-    for values in d.values():
-        out.extend(values)
-    return out
 
 
 T = TypeVar("T")
@@ -150,7 +140,7 @@ def pathfind(
     target_coord: tuple[int, int],
     nodes: dict[tuple[int, int], int],
     graph: PyGraph,
-) -> Optional[list[tuple[int, int]]]:
+) -> Optional[list[int]]:
     source_idx = nodes[source_coord]
     tx, tz = target_coord
 
@@ -176,7 +166,7 @@ def pathfind(
     except NoPathFound:
         return None
 
-    return path_indices
+    return path_indices  # type: ignore
 
 
 def match_junctions_to_line(
@@ -210,7 +200,7 @@ def match_junctions_to_line(
 
 def route_iterator(
     grouped_stations: list[tuple[JsonStation, tuple[int, int]]],
-) -> Iterator[tuple[int, JsonStation, tuple[int, int], JsonStation, tuple[int, int]]]:
+) -> Iterator[tuple[JsonStation, tuple[int, int], JsonStation, tuple[int, int]]]:
     cnt = 0
     highest_level = max(station.level for station, _ in grouped_stations)
     for level in range(3, highest_level):
@@ -224,7 +214,7 @@ def route_iterator(
                 if cnt % 500 == 0:
                     logging.info(f"Calculated {cnt} paths")
                 cnt += 1
-                yield level, station, origin_coords, dest_station, dest_coords
+                yield station, origin_coords, dest_station, dest_coords
 
 
 def main():
@@ -236,7 +226,7 @@ def main():
     logging.info("Matching stations to rail graph nodes")
     grouped_stations = matchup_stations_to_nodes(unmatched_stations, list(nodes.keys()))
     junctions = {}
-    for level, station, origin_coords, dest_station, dest_coords in route_iterator(
+    for station, origin_coords, dest_station, dest_coords in route_iterator(
         grouped_stations
     ):
         path = pathfind(origin_coords, dest_coords, nodes, graph)
