@@ -4,13 +4,15 @@ import numpy as np
 import logging
 import json
 from uuid import uuid4
-from typing import Iterator, Optional, TypeVar
+from typing import Iterator, Optional
 from pydantic import ValidationError
 from treelib import Tree
 from models import JsonStation, JsonLine, JsonJunctions, JsonJunctionsData
 from rustworkx import PyGraph, astar_shortest_path, spring_layout, NoPathFound
 from rustworkx.visualization import mpl_draw
 from scipy.spatial import KDTree
+
+from utils import StreamArray, euclidean_distance, safe_list_access
 
 STATIONS_FILE = "../OneDestStations.json"
 LINES_FILE = "../OneDestLines.json"
@@ -29,34 +31,12 @@ COLOR_TO_REGION = {
     "#fcd20e": "aegis",
     "#ff5e00": "lyrean",
 }
-
-
-class StreamArray(list):
-    ### Class is used to stream a generator object in json.dumps method. Otherwise I get a TypeError: Object of type generator is not JSON serializable
-    def __init__(self, iterator: Iterator):
-        self.iterator = iterator
-
-    def __iter__(self):
-        return self.iterator
-
-    def __len__(self):
-        return 1
-
-
-def euclidean_distance(p1: tuple[int, int], p2: tuple[int, int]) -> float:
-    return math.sqrt((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2)
-
-
-T = TypeVar("T")
-
-
-def safe_list_access(
-    list: list[T], index: int, default: Optional[T] = None
-) -> Optional[T]:
-    try:
-        return list[index]
-    except IndexError:
-        return default
+ANGLE_TO_COMPASS = {
+    0: "East (0º)",
+    90: "North (90º)",
+    180: "West (180º)",
+    -90: "South (-90º)",
+}
 
 
 def load_lines_to_graph(
@@ -97,7 +77,9 @@ def load_lines_to_graph(
 def load_stations_data() -> tuple[dict[str, JsonStation], Tree]:
     stations: dict[str, JsonStation] = {}
     one_dests = Tree()
-    with (open(STATIONS_FILE, "r") as station_file,):
+    with (
+        open(STATIONS_FILE, "r") as station_file,
+    ):
         one_dests.create_node(identifier="!", tag="/dest !")
         for station_json in ijson.items(station_file, "features.item"):
             station = JsonStation.model_validate(station_json)
@@ -217,6 +199,16 @@ def route_iterator(
                 yield station, origin_coords, dest_station, dest_coords
 
 
+def find_angle_between(point: tuple[int, int], other: tuple[int, int]) -> int:
+    """Correctly inverts the Y just like minecraft does"""
+    x, z = point
+    ox, oz = other
+    angle = round(math.degrees(math.atan2(-(oz - z), (ox - x))))
+    if angle == -180:
+        return 180
+    return angle # type: ignore
+
+
 def main():
     logging.info("Loading stations and one dest tree")
     unmatched_stations, one_dest_tree = load_stations_data()
@@ -248,7 +240,7 @@ def main():
             region = dests[1]
             nation = dests[2]
             successor = graph[path[i + 1]]
-            angle = math.degrees(math.atan2(-(successor[1] - z), (successor[0] - x)))
+            angle = find_angle_between(coords, successor)
             line = match_junctions_to_line(coords, successor, junction_to_lines)
             node_region = COLOR_TO_REGION[line.color]
             if angle not in junctions[coords]:
@@ -297,7 +289,7 @@ def main():
     for coord, junction in junctions.items():
         output[coord] = {}
         for id, dest_set in junction.items():
-            output[coord][f"{id:.2f}"] = list(dest_set)
+            output[coord][ANGLE_TO_COMPASS.get(id, id)] = list(dest_set)
     with open("../TestJunctions.json", "w+") as junction_test:
         # junction_test.write(json.dumps(output))
         junction_dump = StreamArray(
