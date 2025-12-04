@@ -43,23 +43,6 @@ class StreamArray(list):
         return 1
 
 
-T = TypeVar("T")
-
-
-def pairwise_with_tail(iterable: Iterable[T]) -> Iterator[tuple[T, Optional[T]]]:
-    it = iter(iterable)
-    try:
-        prev: T = next(it)
-    except StopIteration:
-        return  # empty iterable → yields nothing
-
-    for curr in it:
-        yield prev, curr
-        prev = curr
-
-    yield prev, None
-
-
 def euclidean_distance(p1: tuple[int, int], p2: tuple[int, int]) -> float:
     return math.sqrt((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2)
 
@@ -72,6 +55,18 @@ def flatten_dict_lists(d: dict[F]) -> list[F]:
     for values in d.values():
         out.extend(values)
     return out
+
+
+T = TypeVar("T")
+
+
+def safe_list_access(
+    list: list[T], index: int, default: Optional[T] = None
+) -> Optional[T]:
+    try:
+        return list[index]
+    except IndexError:
+        return default
 
 
 def load_lines_to_graph(
@@ -190,22 +185,27 @@ def match_junctions_to_line(
     junctions_to_lines: dict[tuple[int, int], list[JsonLine]],
 ) -> JsonLine:
     starting_junction_lines = junctions_to_lines[starting]
-    ending_junction_lines = junctions_to_lines[ending]
-    matches = set()
-    for line in starting_junction_lines:
-        if line in ending_junction_lines:
-            matches.add(line.id)
-    matches = list(matches)
+    matches = []
+    for line_data in starting_junction_lines:
+        for line in line_data.line:
+            edge_amount = len(line)
+            for i in range(edge_amount):
+                next_node = safe_list_access(line, i + 1)
+                prev_node = safe_list_access(line, i - 1)
+                if (
+                    line[i] == starting
+                    and (next_node == ending or prev_node == ending)
+                    and line_data not in matches
+                ):
+                    matches.append(line_data)
 
     if len(matches) == 0:
-        raise ValueError("No junction found")
+        raise ValueError(f"No junction found for {starting} to {ending}")
     if len(matches) > 1:
         raise ValueError(
             f"More than one junction found for {starting} and {ending}: {matches}"
         )
-    for line in starting_junction_lines:
-        if line.id == matches[0]:
-            return line
+    return matches[0]
 
 
 def route_iterator(
@@ -236,9 +236,9 @@ def main():
     logging.info("Matching stations to rail graph nodes")
     grouped_stations = matchup_stations_to_nodes(unmatched_stations, list(nodes.keys()))
     junctions = {}
-    cnt = 0
-    highest_level = max(station.level for station, _ in grouped_stations)
-    for level, station, origin_coords, dest_station, dest_coords in route_iterator(grouped_stations):
+    for level, station, origin_coords, dest_station, dest_coords in route_iterator(
+        grouped_stations
+    ):
         path = pathfind(origin_coords, dest_coords, nodes, graph)
         if path is None:
             logging.error(
@@ -258,9 +258,7 @@ def main():
             region = dests[1]
             nation = dests[2]
             successor = graph[path[i + 1]]
-            angle = math.degrees(
-                math.atan2(-(successor[1] - z), (successor[0] - x))
-            )
+            angle = math.degrees(math.atan2(-(successor[1] - z), (successor[0] - x)))
             line = match_junctions_to_line(coords, successor, junction_to_lines)
             node_region = COLOR_TO_REGION[line.color]
             if angle not in junctions[coords]:

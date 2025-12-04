@@ -573,8 +573,8 @@
         },
         {
             "name": "Lusitania",
-            "x": 7964,
-            "z": 3960,
+            "x": 8061,
+            "z": 3783,
             "dest": "/dest ! +,+ medi lusitania portucale",
             "level": 3,
             "zoom": 1,
@@ -582,6 +582,18 @@
             "color": "#e83b3b",
             "y": -49,
             "image": "https://raw.githubusercontent.com/OneDest/data/master/images/lusitania.png"
+        },
+        {
+            "name": "Classicale",
+            "x": 8559,
+            "z": 3642,
+            "dest": "/dest ! +,+ medi lusitania classicale",
+            "level": 4,
+            "zoom": 1,
+            "id": "civmap:onedest/station/classicale",
+            "color": "#e83b3b",
+            "y": 65,
+            "image": "https://raw.githubusercontent.com/OneDest/data/master/images/classicale.png"
         },
         {
             "name": "Cascais",
@@ -680,6 +692,18 @@
             "y": 15,
             "note": "moved to Arctic tag",
             "image": "https://raw.githubusercontent.com/OneDest/data/master/images/mta.png"
+        },
+        {
+            "name": "Bloxernistan",
+            "x": 3150,
+            "z": 553,
+            "dest": "/dest ! +,+ arctic bloxernistan",
+            "level": 3,
+            "zoom": 3,
+            "id": "civmap:onedest/station/bloxernistan",
+            "color": "#8fd3ff",
+            "y": 15,
+            "image": "https://raw.githubusercontent.com/OneDest/data/master/images/bloxernistan.png"
         },
         {
             "name": "Shiroyama",
@@ -1345,11 +1369,22 @@
             "z": -1159,
             "dest": "/dest ! -,- occident volterra shockton",
             "level": 4,
-            "zoom": 1,
+            "zoom": 2,
             "id": "civmap:onedest/station/shockton",
             "color": "#024F30",
             "y": 0,
             "image": "https://raw.githubusercontent.com/OneDest/data/master/images/shockton.png"
+        },
+        {
+            "name": "Volterra Prime",
+            "x": -1157,
+            "z": -1212,
+            "dest": "/dest ! -,- occident volterra prime",
+            "level": 3,
+            "zoom": 1,
+            "id": "civmap:onedest/station/prime",
+            "color": "#024F30",
+            "y": 70
         },
         {
             "name": "Warmia",

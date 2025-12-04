@@ -1,5 +1,5 @@
 from typing import Any, Optional
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel
 
 
 class Coordinate(BaseModel):
