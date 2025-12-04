@@ -642,7 +642,31 @@
             "color": "#e83b3b",
             "y": 10,
             "note": "Iaumea",
-            "image": "https://raw.githubusercontent.com/OneDest/data/master/images/notdoneyet.png"
+            "image": "https://raw.githubusercontent.com/OneDest/data/master/images/santiago.png"
+        },
+        {
+            "name": "Ila",
+            "x": 6938,
+            "z": 3088,
+            "dest": "/dest ! +,+ medi ila",
+            "level": 3,
+            "zoom": 4,
+            "id": "civmap:onedest/station/ila",
+            "color": "#e83b3b",
+            "y": 65,
+            "image": "https://raw.githubusercontent.com/OneDest/data/master/images/ila.png"
+        },
+        {
+            "name": "Concord",
+            "x": 4894,
+            "z": 3132,
+            "dest": "/dest ! +,+ medi concord",
+            "level": 3,
+            "zoom": 4,
+            "id": "civmap:onedest/station/concord",
+            "color": "#e83b3b",
+            "y": 65,
+            "image": "https://raw.githubusercontent.com/OneDest/data/master/images/concord.png"
         },
         {
             "name": "Rivia",
